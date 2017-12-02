@@ -44,7 +44,7 @@ public class Canvas extends JFrame implements KeyListener{
 			b.fillRect(0,0,MAXWIDTH,MAXHEIGHT);
 
 			player.paint(b, cameraTranslation);
-			cameraTranslation = player.position;
+			cameraTranslation = player.accel;
 			for (Polygon p : objects)
 				p.paint(b, cameraTranslation);
 

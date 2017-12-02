@@ -70,27 +70,19 @@ public abstract class Polygon {
 
     public void rotate(int degrees) {rotation = (rotation+degrees)%360;}
 
+    public void translate(Point cameraTranslation) {
+        position.x -= cameraTranslation.x;
+        position.y -= cameraTranslation.y;
+    }
     public void paint(Graphics brush, Point cameraTranslation) {
-
-        Point[] points = this.getPoints();
-        int pl = points.length;
-        int[] x = new int[pl];
-        int[] y = new int[pl];
-        for (int i = 0; i < pl; i++) {
-            x[i] = (int)points[i].getX();
-            y[i] = (int)points[i].getY();
-        }
-
-//        brush.fillPolygon(x, y, pl);
-//
+        translate(cameraTranslation);
         AffineTransform at = new AffineTransform();
-            at.translate(position.x - img.getWidth() / 4 - cameraTranslation.getX(), position.y - img.getHeight() / 4 - cameraTranslation.getY());
-            at.rotate(Math.toRadians(rotation), findCenter().x, findCenter().y);
+
+        at.translate(position.x, position.y);
+        at.rotate(Math.toRadians(rotation), findCenter().x, findCenter().y);
 
         Graphics2D g2d = (Graphics2D) brush;
         g2d.drawImage(img, at, null);
-
-        //brush.fillPolygon(x, y, pl);
     }
 
     /**
