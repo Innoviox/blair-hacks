@@ -10,7 +10,7 @@ public class Bullet extends Polygon {
     public Bullet(Point[] inShape, Point inPosition, double inRotation, int width, int height, BufferedImage image, double stepinc) {
         super(inShape, inPosition, inRotation, width, height, image);	 //call super constructor
         step += stepinc; //increase speed
-        color = Color.green;
+        color = Color.blue;
     }
 
     public void move() {
