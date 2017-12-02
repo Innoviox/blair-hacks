@@ -9,91 +9,116 @@ import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.TimeUnit;
 
 public class Game {
-    private static final Point[] squarePoints = new Point[] {
-            new Point(0, 0),
-            new Point(0, Square.HEIGHT),
-            new Point(Square.WIDTH, Square.HEIGHT),
-            new Point(Square.WIDTH, 0)
-    };
-    private static final Point[] bulletPoints = new Point[] {
-            new Point(0, 0),
-            new Point(0, 2),
-            new Point(10, 2),
-            new Point(10, 0)
-    };
-    private static final Random r = new Random();
+	private static final Point[] squarePoints = new Point[]{
+			new Point(0, 0),
+			new Point(0, Square.HEIGHT),
+			new Point(Square.WIDTH, Square.HEIGHT),
+			new Point(Square.WIDTH, 0)
+	};
+	private static final Point[] bulletPoints = new Point[]{
+			new Point(0, 0),
+			new Point(0, 2),
+			new Point(10, 2),
+			new Point(10, 0)
+	};
+	private static final Random r = new Random();
 
-    private Canvas canvas;
+	private Canvas canvas;
 
-    private Runnable update;
+	private Runnable update;
 
-    private List<Polygon> gameObjects;
+	private List<Polygon> gameObjects;
 
-    private Tank player;
+	private Tank player;
 
-    private final ScheduledExecutorService scheduler = Executors.newScheduledThreadPool(1);
+	private int updates = 0;
 
-    public static void main(String args[]) throws IOException {
-        Game g = new Game();
+	private int lastShot = 0;
 
-        g.start();
-    }
+	private final ScheduledExecutorService scheduler = Executors.newScheduledThreadPool(1);
 
-    public void start() {
-        canvas.paint(canvas.getGraphics());
+	public static void main(String args[]) throws IOException {
+		Game g = new Game();
 
-        update = () -> update();
+		g.start();
+	}
 
-        scheduler.scheduleAtFixedRate(update, 1, 1000/60, TimeUnit.MILLISECONDS);
+	public void start() {
+		canvas.paint(canvas.getGraphics());
 
-    }
+		update = () -> update();
 
-    public void makeBullet() {
-        gameObjects.add(new Bullet(bulletPoints, new Point(player.getPoints()[3].x + Canvas.MAXWIDTH / 2, player.getPoints()[3].y + Canvas.MAXHEIGHT / 2), player.rotation, 50, 50, Math.abs(player.accel.x + player.accel.y)));
-    }
+		scheduler.scheduleAtFixedRate(update, 1, 1000 / 60, TimeUnit.MILLISECONDS);
 
-    public void update() {
-        ArrayList<Polygon> rem = new ArrayList<>();
-        for(Polygon p : gameObjects) {
-        	if(!(p instanceof Square)) {
-		        p.update();
-	        }else{
-		        ((Square) p).update(gameObjects);
-	        }
-            if (p instanceof Bullet) {
-                if (((Bullet) p).counter > ((Bullet) p).lifetime) {
-                    rem.add(p);
-                }
-            }
-        }
+	}
+
+	public void makeBullet() {
+
+		if (updates - lastShot > 10) {
+			lastShot = updates;
+			gameObjects.add(new Bullet(bulletPoints, new Point(player.getPoints()[3].x + Canvas.MAXWIDTH / 2, player.getPoints()[3].y + Canvas.MAXHEIGHT / 2), player.rotation, 50, 50, Math.abs(player.accel.x + player.accel.y)));
+		}
+	}
 
 
-        for (Polygon p: rem) gameObjects.remove(p);
-        if (canvas.getKeys().get(' ')) {
-            makeBullet();
-        }
-        player.update(canvas.getKeys());
-        canvas.update(gameObjects, player);
-        canvas.paint(canvas.getGraphics());
-    }
+	public void update() {
+		int count = 0;
+		updates++;
+		ArrayList<Polygon> rem = new ArrayList<>();
+		for (Polygon p : gameObjects) {
+			if (!(p instanceof Square)) {
+				p.update();
+			} else {
+				count++;
+				((Square) p).update(gameObjects);
 
-    public Game() throws IOException {
-        gameObjects = new ArrayList<>();
+				if (player.distance(p).magnitude() > 1000) {
+					rem.add(p);
+				}
+			}
+			if (p instanceof Bullet) {
+				if (((Bullet) p).counter > ((Bullet) p).lifetime) {
+					rem.add(p);
+				}
+			}
+		}
 
-        for (int i = 0; i < 10; i++) {
-            Point position = new Point(r.nextInt(Canvas.MAXWIDTH), r.nextInt(Canvas.MAXHEIGHT));
-            gameObjects.add(new Square(squarePoints, position, 0));
-        }
+		if (new Random().nextInt(count) == 1) {
+			Point position = new Point(r.nextInt(Canvas.MAXWIDTH), r.nextInt(Canvas.MAXHEIGHT));
+			try {
+				gameObjects.add(new Square(squarePoints, position, 0));
+			} catch (IOException e) {
+				e.printStackTrace();
+			}
+		}
 
-        player = new Tank(new Point[] {new Point(0,0), new Point(0, 40), new Point(40, 40), new Point(40, 20), new Point(40, 0)},new Point(0, 0),0,
-		        10,10, ImageIO.read(new File("images/tank_blue.png")),10);
 
-	    canvas = new Canvas(player);
+		for (Polygon p : rem) gameObjects.remove(p);
+		if (canvas.getKeys().get(' ')) {
+			makeBullet();
+		}
+		player.update(canvas.getKeys());
+		canvas.update(gameObjects, player);
+		canvas.paint(canvas.getGraphics());
+	}
 
-        canvas.update(gameObjects, player);
+	public Game() throws IOException {
+		gameObjects = new ArrayList<>();
 
-        canvas.setVisible(true);
+		for (int i = 0; i < 10; i++) {
+			Point position = new Point(r.nextInt(Canvas.MAXWIDTH), r.nextInt(Canvas.MAXHEIGHT));
+			gameObjects.add(new Square(squarePoints, position, 0));
+		}
 
-    }
+		player = new Tank(new Point[]{new Point(0, 0), new Point(0, 40), new Point(40, 40), new Point(40, 20), new Point(40, 0)}, new Point(0, 0), 0,
+				10, 10, ImageIO.read(new File("images/tank_blue.png")), 10);
+
+		canvas = new Canvas(player);
+
+		canvas.update(gameObjects, player);
+
+		canvas.setVisible(true);
+
+	}
 
 }

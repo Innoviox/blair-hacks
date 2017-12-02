@@ -29,7 +29,7 @@ public class Square extends Damagable {
         for(Polygon p : objects){
             if(p instanceof Square){
                 x = (x + distance(p).x) / 2;
-                y = (y + distance(p).y) / 2;
+                y = (y - distance(p).y) / 2;
             }
         }
 
