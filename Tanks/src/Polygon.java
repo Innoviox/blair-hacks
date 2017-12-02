@@ -80,8 +80,8 @@ public abstract class Polygon {
             y[i] = (int)points[i].getY();
         }
 
-        //brush.fillPolygon(x, y, pl);
-
+//        brush.fillPolygon(x, y, pl);
+//
         AffineTransform at = new AffineTransform();
         at.translate(position.x - img.getWidth()/4, position.y - img.getHeight()/4);
         at.rotate(Math.toRadians(rotation), findCenter().x, findCenter().y);
@@ -133,7 +133,7 @@ public abstract class Polygon {
     }
 
     // "findCenter" implements another bit of math.
-    private Point findCenter() {
+    protected Point findCenter() {
         Point sum = new Point(0,0);
         for (int i = 0, j = 1; i < shape.length; i++, j=(j+1)%shape.length) {
             sum.x += (shape[i].x + shape[j].x)

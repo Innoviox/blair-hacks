@@ -43,7 +43,7 @@ public class Game {
     public void update() {
         for(Polygon p : gameObjects)
             p.update();
-        //player.update();
+
         canvas.update(gameObjects);
         canvas.paint(canvas.getGraphics());
     }

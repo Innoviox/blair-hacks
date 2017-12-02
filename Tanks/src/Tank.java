@@ -2,11 +2,12 @@ import javax.imageio.ImageIO;
 import java.awt.*;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
+import java.awt.geom.AffineTransform;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
 
-public class Tank extends Damagable implements KeyListener {
+public class Tank extends Damagable {
     protected boolean left = false, right = false, front = false, shoot = false; //direction vectors
     public double speed = 0.1;
     public int shots = 0, MAX_SHOTS = 10;
@@ -19,7 +20,30 @@ public class Tank extends Damagable implements KeyListener {
         super(inShape, inPosition, inRotation, width, height, ImageIO.read(new File("images/tank_blue.png")), health);
     }
 
-    public void move() {
+
+	public void paint(Graphics brush) {
+
+		Point[] points = this.getPoints();
+		int pl = points.length;
+		int[] x = new int[pl];
+		int[] y = new int[pl];
+		for (int i = 0; i < pl; i++) {
+			x[i] = (int)points[i].getX();
+			y[i] = (int)points[i].getY();
+		}
+
+//        brush.fillPolygon(x, y, pl);
+
+		AffineTransform at = new AffineTransform();
+		at.rotate(Math.toRadians(rotation), findCenter().x, findCenter().y);
+		Graphics2D g2d = (Graphics2D) brush;
+		g2d.drawImage(img, at, null);
+
+	}
+
+
+
+	public void move() {
         if (right) rotate(6);
         if (left)  rotate(-6);
         if (front) {
@@ -81,26 +105,6 @@ public class Tank extends Damagable implements KeyListener {
     public void shootOff() {
         shoot = false;
     }
-
-    public void keyPressed(KeyEvent e) {
-        int keyCode = e.getKeyCode();
-        switch( keyCode ) {
-            case KeyEvent.VK_UP: front = true; break;
-            case KeyEvent.VK_RIGHT: right = true; break;
-            case KeyEvent.VK_LEFT: left = true; break;
-            case KeyEvent.VK_SPACE: shoot = true; break;
-        }
-    }
-    public void keyReleased(KeyEvent e) {
-        int keyCode = e.getKeyCode();
-        switch( keyCode ) {
-            case KeyEvent.VK_UP: front = false; break;
-            case KeyEvent.VK_RIGHT: right = false; break;
-            case KeyEvent.VK_LEFT: left = false; break;
-            case KeyEvent.VK_SPACE: shots=0;shoot = false; break;
-        }
-    }
-    public void keyTyped(KeyEvent e) {}
 
     public static Point[] generateShape(int level) {
         Point[] oldShipPoints = new Point[]{

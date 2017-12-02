@@ -2,10 +2,25 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1f4c6c76-5ef4-445c-b9df-25f3353624b8" name="Default" comment="">
+      <change beforePath="" afterPath="$PROJECT_DIR$/images/asteroid1.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/images/asteroid2.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/images/ship1.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/images/ship2.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/images/ship3.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/images/ship4.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/images/square.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/images/tank_bigRed.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/images/tank_blue.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/images/tank_dark.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/images/tank_darkLarge.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/images/tank_green.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/images/tank_huge.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/images/tank_red.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/images/tank_sand.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/images/ufo_damage0.png" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/Tanks/src/Canvas.java" afterPath="$PROJECT_DIR$/Tanks/src/Canvas.java" />
-      <change beforePath="$PROJECT_DIR$/Tanks/src/Game.java" afterPath="$PROJECT_DIR$/Tanks/src/Game.java" />
-      <change beforePath="$PROJECT_DIR$/Tanks/src/Square.java" afterPath="$PROJECT_DIR$/Tanks/src/Square.java" />
+      <change beforePath="$PROJECT_DIR$/Tanks/src/Polygon.java" afterPath="$PROJECT_DIR$/Tanks/src/Polygon.java" />
+      <change beforePath="$PROJECT_DIR$/Tanks/src/Tank.java" afterPath="$PROJECT_DIR$/Tanks/src/Tank.java" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -26,11 +41,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Game.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Game.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Tanks/src/Game.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="238">
-              <caret line="48" column="19" lean-forward="true" selection-start-line="48" selection-start-column="19" selection-end-line="48" selection-end-column="19" />
+            <state relative-caret-position="17">
+              <caret line="36" column="29" lean-forward="true" selection-start-line="36" selection-start-column="29" selection-end-line="36" selection-end-column="29" />
               <folding />
             </state>
           </provider>
@@ -39,8 +54,8 @@
       <file leaf-file-name="Canvas.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Tanks/src/Canvas.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="153">
-              <caret line="20" column="21" lean-forward="true" selection-start-line="20" selection-start-column="21" selection-end-line="20" selection-end-column="21" />
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
               <folding>
                 <element signature="e#1274#1275#0" expanded="true" />
                 <element signature="e#1292#1293#0" expanded="true" />
@@ -49,11 +64,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Tank.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="Tank.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Tanks/src/Tank.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="360">
-              <caret line="109" column="12" lean-forward="false" selection-start-line="109" selection-start-column="12" selection-end-line="109" selection-end-column="12" />
+            <state relative-caret-position="275">
+              <caret line="41" column="5" lean-forward="true" selection-start-line="41" selection-start-column="5" selection-end-line="41" selection-end-column="5" />
               <folding />
             </state>
           </provider>
@@ -62,8 +77,8 @@
       <file leaf-file-name="Polygon.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Tanks/src/Polygon.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="255">
-              <caret line="71" column="0" lean-forward="false" selection-start-line="71" selection-start-column="0" selection-end-line="71" selection-end-column="0" />
+            <state relative-caret-position="246">
+              <caret line="142" column="9" lean-forward="true" selection-start-line="142" selection-start-column="9" selection-end-line="142" selection-end-column="9" />
               <folding />
             </state>
           </provider>
@@ -79,6 +94,7 @@
       <find>canvas.update</find>
       <find>canvas.paint</find>
       <find>squares</find>
+      <find>findCenter</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -93,11 +109,11 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/Tanks/src/Bullet.java" />
-        <option value="$PROJECT_DIR$/Tanks/src/Tank.java" />
-        <option value="$PROJECT_DIR$/Tanks/src/Polygon.java" />
         <option value="$PROJECT_DIR$/Tanks/src/Square.java" />
         <option value="$PROJECT_DIR$/Tanks/src/Canvas.java" />
         <option value="$PROJECT_DIR$/Tanks/src/Game.java" />
+        <option value="$PROJECT_DIR$/Tanks/src/Polygon.java" />
+        <option value="$PROJECT_DIR$/Tanks/src/Tank.java" />
       </list>
     </option>
   </component>
@@ -141,7 +157,18 @@
             <path>
               <item name="BulletHell" type="b2602c69:ProjectViewProjectNode" />
               <item name="BulletHell" type="462c0819:PsiDirectoryNode" />
+              <item name="images" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="BulletHell" type="b2602c69:ProjectViewProjectNode" />
+              <item name="BulletHell" type="462c0819:PsiDirectoryNode" />
               <item name="Tanks" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="BulletHell" type="b2602c69:ProjectViewProjectNode" />
+              <item name="BulletHell" type="462c0819:PsiDirectoryNode" />
+              <item name="Tanks" type="462c0819:PsiDirectoryNode" />
+              <item name="images" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="BulletHell" type="b2602c69:ProjectViewProjectNode" />
@@ -170,6 +197,7 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Amy\IdeaProjects\BulletHell" />
       <recent name="C:\Users\Amy\IdeaProjects\BulletHell\Tanks\src" />
     </key>
   </component>
@@ -299,12 +327,12 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1512238142930</updated>
-      <workItem from="1512238145436" duration="5754000" />
+      <workItem from="1512238145436" duration="6912000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="5754000" />
+    <option name="totallyTimeSpent" value="6912000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
@@ -319,7 +347,7 @@
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32894737" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32894737" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32894737" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
@@ -350,38 +378,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/Tanks/src/Tank.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="360">
-          <caret line="109" column="12" lean-forward="false" selection-start-line="109" selection-start-column="12" selection-end-line="109" selection-end-column="12" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Tanks/src/Bullet.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="193">
-          <caret line="35" column="19" lean-forward="false" selection-start-line="35" selection-start-column="19" selection-end-line="35" selection-end-column="19" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Tanks/src/Polygon.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="71" column="0" lean-forward="false" selection-start-line="71" selection-start-column="0" selection-end-line="71" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Tanks/src/HealthBar.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="1" column="12" lean-forward="false" selection-start-line="1" selection-start-column="12" selection-end-line="1" selection-end-column="12" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Tanks/images/square.png">
       <provider selected="true" editor-type-id="images">
         <state />
@@ -395,10 +391,20 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/Tanks/src/HealthBar.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-762">
+          <caret line="3" column="13" lean-forward="false" selection-start-line="3" selection-start-column="13" selection-end-line="3" selection-end-column="13" />
+          <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/Tanks/src/Canvas.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="20" column="21" lean-forward="true" selection-start-line="20" selection-start-column="21" selection-end-line="20" selection-end-column="21" />
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="e#1274#1275#0" expanded="true" />
             <element signature="e#1292#1293#0" expanded="true" />
@@ -406,10 +412,42 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/Tanks/src/Bullet.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="193">
+          <caret line="35" column="19" lean-forward="false" selection-start-line="35" selection-start-column="19" selection-end-line="35" selection-end-column="19" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/Tanks/src/Game.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="48" column="19" lean-forward="true" selection-start-line="48" selection-start-column="19" selection-end-line="48" selection-end-column="19" />
+        <state relative-caret-position="17">
+          <caret line="36" column="29" lean-forward="true" selection-start-line="36" selection-start-column="29" selection-end-line="36" selection-end-column="29" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Tanks/src/Damagable.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Tanks/src/Polygon.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="246">
+          <caret line="142" column="9" lean-forward="true" selection-start-line="142" selection-start-column="9" selection-end-line="142" selection-end-column="9" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Tanks/src/Tank.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="275">
+          <caret line="41" column="5" lean-forward="true" selection-start-line="41" selection-start-column="5" selection-end-line="41" selection-end-column="5" />
           <folding />
         </state>
       </provider>
