@@ -21,7 +21,7 @@ public class Game {
             new Point(10, 2),
             new Point(10, 0)
     };
-    private static final Random r = new Random();
+    public static final Random r = new Random();
 
     private Canvas canvas;
 

@@ -123,6 +123,10 @@ public abstract class Polygon {
         return false;
     }
 
+    public void recoil() {
+        position.x -= Game.r.nextInt(10) - 5;
+        position.y -= Game.r.nextInt(10) - 5;
+    }
     public abstract void move(); //move the polygon
     public abstract Polygon[] destroy(); //destroy the polygon
 
