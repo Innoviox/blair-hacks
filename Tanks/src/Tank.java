@@ -8,7 +8,9 @@ import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
 import java.util.Arrays;
+import java.util.HashMap;
 import java.util.Map;
+import java.util.Random;
 
 public class Tank extends Damagable {
     protected boolean left = false, right = false, front = false, shoot = false; //direction vectors
@@ -139,7 +141,26 @@ public class Tank extends Damagable {
     	level++;
     	xp = 0;
 
-	    JOptionPane.showConfirmDialog(canvas, "Do you love pie?", "Important questions",2);
+    	Map<Integer, String> upgrades = new HashMap<>();
+    	upgrades.put(1,"Speed");
+    	upgrades.put(2,"Damage");
+    	upgrades.put(3,"Health");
+    	upgrades.put(0,"ajlsdkjajlskd");
+    	upgrades.put(4,"ajlsdkjals123123");
+
+		Random r = new Random();
+    	Object[] possibilities = {upgrades.get(r.nextInt(upgrades.size())),upgrades.get(r.nextInt(upgrades.size())),upgrades.get(r.nextInt(upgrades.size()))};
+    	String s = (String)JOptionPane.showInputDialog(
+			    canvas,
+			    "Which upgrade do you want?",
+			    "UPGRADES",
+			    JOptionPane.PLAIN_MESSAGE,
+			    null,
+			    possibilities,
+			    possibilities[0]);
+
+
+
 
 
     }
