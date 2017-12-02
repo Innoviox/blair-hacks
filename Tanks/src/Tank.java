@@ -36,6 +36,8 @@ public class Tank extends Damagable {
 //        brush.fillPolygon(x, y, pl);
 
 		AffineTransform at = new AffineTransform();
+		at.translate(Canvas.MAXWIDTH/2 - img.getWidth() / 4
+				, Canvas.MAXHEIGHT/2 - img.getHeight() / 4 );
 		at.rotate(Math.toRadians(rotation), findCenter().x, findCenter().y);
 		Graphics2D g2d = (Graphics2D) brush;
 		g2d.drawImage(img, at, null);
@@ -91,9 +93,7 @@ public class Tank extends Damagable {
     	left = keys.get('a');
     	right = keys.get('d');
     	front = keys.get('w');
-
-
-
+		move();
     }
 
 
