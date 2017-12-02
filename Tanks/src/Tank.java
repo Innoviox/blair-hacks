@@ -6,6 +6,7 @@ import java.awt.geom.AffineTransform;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
+import java.util.Arrays;
 import java.util.Map;
 
 public class Tank extends Damagable {
@@ -29,15 +30,16 @@ public class Tank extends Damagable {
 		int[] x = new int[pl];
 		int[] y = new int[pl];
 		for (int i = 0; i < pl; i++) {
-			x[i] = (int)points[i].getX();
-			y[i] = (int)points[i].getY();
+			x[i] = (int)points[i].getX() + Canvas.MAXWIDTH / 2;
+			y[i] = (int)points[i].getY() + Canvas.MAXHEIGHT / 2;
 		}
-
-//        brush.fillPolygon(x, y, pl);
+		System.out.println(Arrays.toString(points));
+        brush.setColor(Color.blue);
+        brush.fillPolygon(x, y, pl);
 
 		AffineTransform at = new AffineTransform();
 		at.translate(Canvas.MAXWIDTH/2 - img.getWidth() / 4
-				, Canvas.MAXHEIGHT/2 - img.getHeight() / 4 );
+				, Canvas.MAXHEIGHT/2 - img.getHeight() / 4);
 		at.rotate(Math.toRadians(rotation), findCenter().x, findCenter().y);
 		Graphics2D g2d = (Graphics2D) brush;
 		g2d.drawImage(img, at, null);
@@ -79,10 +81,8 @@ public class Tank extends Damagable {
                 accel.y = 0;
             }
         }
-        position.setX((position.getX() + accel.x) % width); //move
-        position.setY((position.getY() + accel.y) % height);
-        if (position.getX() <= -25) position.setX(width + position.getX()); //warp
-        if (position.getY() <= -25) position.setY(height + position.getY());
+        //position.setX((position.getX() + accel.x) % width); //move
+        //position.setY((position.getY() + accel.y) % height);
 
 
         accel.x = Math.min(Math.max(accel.x, -MAX_ACCEL), MAX_ACCEL); //maximum speed
