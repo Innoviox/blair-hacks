@@ -1,3 +1,5 @@
+import javax.imageio.ImageIO;
+import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
@@ -114,7 +116,34 @@ public class Game {
 			} catch (IOException e) {
 				e.printStackTrace();
 			}
-
 		}
+
+		for (Polygon p : rem) gameObjects.remove(p);
+		if (canvas.getKeys().get(' ')) {
+			makeBullet();
+		}
+
+		player.update(canvas.getKeys());
+		canvas.update(gameObjects, player);
+		canvas.paint(canvas.getGraphics());
 	}
+
+	public Game() throws IOException {
+		gameObjects = new ArrayList<>();
+
+		for (int i = 0; i < 10; i++) {
+			Point position = new Point(r.nextInt(Canvas.MAXWIDTH), r.nextInt(Canvas.MAXHEIGHT));
+			gameObjects.add(new Square(squarePoints, position, 0));
+		}
+
+		player = new Tank(new Point[]{new Point(0, 0), new Point(0, 40), new Point(40, 40), new Point(40, 20), new Point(40, 0)}, new Point(0, 0), 0,
+				10, 10, ImageIO.read(new File("images/tank_blue.png")), 100);
+
+		canvas = new Canvas(player);
+
+		canvas.update(gameObjects, player);
+
+		canvas.setVisible(true);
+	}
+
 }
