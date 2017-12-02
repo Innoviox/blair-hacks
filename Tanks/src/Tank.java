@@ -1,7 +1,10 @@
+import javax.imageio.ImageIO;
 import java.awt.*;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 import java.awt.image.BufferedImage;
+import java.io.File;
+import java.io.IOException;
 
 public class Tank extends Damagable implements KeyListener {
     protected boolean left = false, right = false, front = false, shoot = false; //direction vectors
@@ -12,8 +15,8 @@ public class Tank extends Damagable implements KeyListener {
     public BufferedImage image;
     public final int MAX_ACCEL = 15;
 
-    public Tank(Point[] inShape, Point inPosition, double inRotation, int width, int height, BufferedImage image, int health){
-        super(inShape, inPosition, inRotation, width, height, image, health);
+    public Tank(Point[] inShape, Point inPosition, double inRotation, int width, int height, BufferedImage image, int health) throws IOException {
+        super(inShape, inPosition, inRotation, width, height, ImageIO.read(new File("images/tank_blue.png")), health);
     }
 
     public void move() {
@@ -109,5 +112,4 @@ public class Tank extends Damagable implements KeyListener {
 
         return oldShipPoints;
     }
-
 }

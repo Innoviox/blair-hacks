@@ -41,6 +41,7 @@ public class Game {
     }
 
     public void update() {
+<<<<<<< HEAD
         //TODO update!
 
         for(Polygon p : gameObjects)
@@ -51,6 +52,10 @@ public class Game {
 
         canvas.paint(canvas.getGraphics());
 
+=======
+        for (Square s: squares) s.update();
+        canvas.update(squares);
+>>>>>>> 4adbe01f636a4d3d18f01d77809b63b634bb7f30
     }
 
     public Game() throws IOException {
