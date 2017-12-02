@@ -21,6 +21,7 @@ public class HealthBar extends Polygon {
     @Override
     public void move() {
         this.rotation = obj.rotation;
+        this.position = obj.position.clone();
     }
 
     @Override

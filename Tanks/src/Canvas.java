@@ -12,7 +12,7 @@ public class Canvas extends JFrame implements KeyListener{
 	public static final int MAXWIDTH = (int) Toolkit.getDefaultToolkit().getScreenSize().getWidth();
 	public static final int MAXHEIGHT = (int) Toolkit.getDefaultToolkit().getScreenSize().getHeight();
 
-	static public Point cameraTranslation;
+	static public Point cameraTranslation = new Point(0, 0);
 
 	private Map<Character, Boolean> keys;
 
