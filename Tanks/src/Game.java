@@ -48,6 +48,9 @@ public class Game {
         canvas.paint(canvas.getGraphics());
 
         update = () -> update();
+
+        scheduler.scheduleAtFixedRate(update,1,1000/60, TimeUnit.MILLISECONDS);
+
     }
     public void damage(Polygon p, ArrayList<Polygon> rem) {
         Damagable d;
