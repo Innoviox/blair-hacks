@@ -69,11 +69,6 @@ public abstract class Polygon {
 
     public void rotate(int degrees) {rotation = (rotation+degrees)%360;}
 
-    public void update(){
-        move();
-    }
-
-
     public void paint(Graphics brush) {
 
         Point[] points = this.getPoints();

@@ -14,12 +14,14 @@ public class Game {
             new Point(Square.WIDTH, 0)
     };
     private static final Random r = new Random();
+
     private Canvas canvas;
 
-    private List<Square> squares;
-
-
     private Runnable update;
+
+    private List<Polygon> gameObjects;
+
+    private Tank player;
 
     private final ScheduledExecutorService scheduler = Executors.newScheduledThreadPool(1);
 
@@ -40,16 +42,28 @@ public class Game {
 
     public void update() {
         //TODO update!
+
+        for(Polygon p : gameObjects)
+            p.update();
+
+        player.update();
+        canvas.update(gameObjects);
+
+        canvas.paint(canvas.getGraphics());
+
     }
 
     public Game() throws IOException {
         canvas = new Canvas();
-        squares = new ArrayList<>();
+        gameObjects = new ArrayList<>();
+
         for (int i = 0; i < 10; i++) {
             Point position = new Point(r.nextInt(Canvas.MAXWIDTH), r.nextInt(Canvas.MAXHEIGHT));
-            squares.add(new Square(squarePoints, position, 0));
+            gameObjects.add(new Square(squarePoints, position, 0));
         }
-        canvas.update(squares);
+
+        canvas.update(gameObjects);
+
         canvas.setVisible(true);
 
     }
