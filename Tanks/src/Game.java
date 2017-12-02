@@ -63,7 +63,7 @@ public class Game {
                 count++;
                 ((Square) p).update(gameObjects);
 
-                if (player.distance(p).magnitude() > Math.sqrt(Canvas.MAXWIDTH * Canvas.MAXWIDTH + Canvas.MAXHEIGHT * Canvas.MAXHEIGHT)) {
+                if (player.distance(p).magnitude() > Math.sqrt(Canvas.MAXWIDTH * Canvas.MAXWIDTH + Canvas.MAXHEIGHT * Canvas.MAXHEIGHT  )) {
                     rem.add(p);
                 }
             }
@@ -85,14 +85,6 @@ public class Game {
         }
 
         if (new Random().nextInt(count) == 1) {
-            Point position = new Point(r.nextInt(Canvas.MAXWIDTH), r.nextInt(Canvas.MAXHEIGHT));
-            try {
-                gameObjects.add(new Square(squarePoints, position, 0));
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-        }
-        if (new Random().nextInt(count / 2) == 1) {
             Point position = new Point(r.nextInt(Canvas.MAXWIDTH), r.nextInt(Canvas.MAXHEIGHT));
             try {
                 gameObjects.add(new Square(squarePoints, position, 0));
@@ -123,7 +115,7 @@ public class Game {
                 10, 10, ImageIO.read(new File("images/tank_blue.png")), 100);
 
         canvas = new Canvas(player);
-
+		player.assignCanvas(canvas);
         canvas.update(gameObjects, player);
 
         canvas.setVisible(true);
@@ -135,9 +127,9 @@ public class Game {
 		try {
 			d = (Damagable) p;
 			d.health--;
-			if (d.health == 0) {
+			if (d.health == 1) {
 				rem.add(p);
-				player.setXp(player.getXp() + 5 * d.max_health);
+				player.setXp(player.getXp() + d.max_health);
 			}
 		} catch (ClassCastException e) {
 		}

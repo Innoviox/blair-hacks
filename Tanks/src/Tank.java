@@ -1,4 +1,5 @@
 import javax.imageio.ImageIO;
+import javax.swing.*;
 import java.awt.*;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
@@ -22,6 +23,8 @@ public class Tank extends Damagable {
 
 	private int rateOfFire = 10;
 	private int xp;
+
+	private Canvas canvas;
 
     public Tank(Point[] inShape, Point inPosition, double inRotation, int width, int height, BufferedImage image, int health) throws IOException {
         super(inShape, inPosition, inRotation, width, height, ImageIO.read(new File("images/tank_blue.png")), health);
@@ -135,7 +138,14 @@ public class Tank extends Damagable {
     public void levelup(){
     	level++;
     	xp = 0;
-    	rateOfFire --;
+
+	    JOptionPane.showConfirmDialog(canvas, "Do you love pie?", "Important questions",2);
+
+
+    }
+
+    public void assignCanvas(Canvas c){
+    	canvas = c;
     }
 
     @Override
