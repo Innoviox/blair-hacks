@@ -1,28 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="1f4c6c76-5ef4-445c-b9df-25f3353624b8" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/Tanks/images/asteroid1.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Tanks/images/asteroid2.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Tanks/images/ship1.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Tanks/images/ship2.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Tanks/images/ship3.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Tanks/images/ship4.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Tanks/images/square.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Tanks/images/tank_bigRed.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Tanks/images/tank_blue.png" afterPath="$PROJECT_DIR$/images/tank_blue.png" />
-      <change beforePath="$PROJECT_DIR$/Tanks/images/tank_dark.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Tanks/images/tank_darkLarge.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Tanks/images/tank_green.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Tanks/images/tank_huge.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Tanks/images/tank_red.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Tanks/images/tank_sand.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Tanks/images/ufo_damage0.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Tanks/src/Game.java" afterPath="$PROJECT_DIR$/Tanks/src/Game.java" />
-      <change beforePath="$PROJECT_DIR$/Tanks/src/Polygon.java" afterPath="$PROJECT_DIR$/Tanks/src/Polygon.java" />
-      <change beforePath="$PROJECT_DIR$/Tanks/src/Square.java" afterPath="$PROJECT_DIR$/Tanks/src/Square.java" />
-    </list>
+    <list default="true" id="1f4c6c76-5ef4-445c-b9df-25f3353624b8" name="Default" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -45,8 +24,8 @@
       <file leaf-file-name="Game.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Tanks/src/Game.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="221">
-              <caret line="50" column="5" lean-forward="true" selection-start-line="50" selection-start-column="5" selection-end-line="50" selection-end-column="5" />
+            <state relative-caret-position="136">
+              <caret line="45" column="0" lean-forward="true" selection-start-line="45" selection-start-column="0" selection-end-line="45" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -362,15 +341,16 @@
       <option name="presentableId" value="Default" />
       <updated>1512238142930</updated>
       <workItem from="1512238145436" duration="9058000" />
-      <workItem from="1512250588540" duration="269000" />
+      <workItem from="1512250588540" duration="320000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="9327000" />
+    <option name="totallyTimeSpent" value="9378000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -381,8 +361,8 @@
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32894737" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32894737" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32894737" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32894737" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.1762481" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -535,8 +515,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Tanks/src/Game.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="50" column="5" lean-forward="true" selection-start-line="50" selection-start-column="5" selection-end-line="50" selection-end-column="5" />
+        <state relative-caret-position="136">
+          <caret line="45" column="0" lean-forward="true" selection-start-line="45" selection-start-column="0" selection-end-line="45" selection-end-column="0" />
           <folding />
         </state>
       </provider>
