@@ -33,6 +33,7 @@ public class Canvas extends JFrame implements KeyListener{
 		keys.put('s',false);
 		keys.put('d',false);
 		keys.put('a',false);
+        keys.put(' ',false);
 		this.addKeyListener(this);
 	}
 
@@ -76,6 +77,9 @@ public class Canvas extends JFrame implements KeyListener{
 		if(event.getKeyCode() == KeyEvent.VK_D){
 			keys.put('d',false);
 		}
+		if(event.getKeyCode() == KeyEvent.VK_SPACE){
+            keys.put(' ',false);
+        }
 	}
 
 	@Override
@@ -96,7 +100,8 @@ public class Canvas extends JFrame implements KeyListener{
 		if(event.getKeyCode() == KeyEvent.VK_D){
 			keys.put('d',true);
 		}
+        if(event.getKeyCode() == KeyEvent.VK_SPACE){
+            keys.put(' ',true);
+        }
 	}
-
-
 }

@@ -76,13 +76,25 @@ public abstract class Polygon {
     }
     public void paint(Graphics brush, Point cameraTranslation) {
         translate(cameraTranslation);
+        Point[] points = this.getPoints();
+        int pl = points.length;
+        int[] x = new int[pl];
+        int[] y = new int[pl];
+        for (int i = 0; i < pl; i++) {
+            x[i] = (int)points[i].getX();
+            y[i] = (int)points[i].getY();
+        }
+        brush.setColor(Color.blue);
+        brush.fillPolygon(x, y, pl);
+        /*
         AffineTransform at = new AffineTransform();
 
-        at.translate(position.x, position.y);
+        at.translate(position.x - img.getWidth() / 4, position.y - img.getHeight() / 4);
         at.rotate(Math.toRadians(rotation), findCenter().x, findCenter().y);
 
         Graphics2D g2d = (Graphics2D) brush;
         g2d.drawImage(img, at, null);
+        */
     }
 
     /**

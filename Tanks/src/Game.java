@@ -15,6 +15,12 @@ public class Game {
             new Point(Square.WIDTH, Square.HEIGHT),
             new Point(Square.WIDTH, 0)
     };
+    private static final Point[] bulletPoints = new Point[] {
+            new Point(0, 0),
+            new Point(0, 2),
+            new Point(10, 2),
+            new Point(10, 0)
+    };
     private static final Random r = new Random();
 
     private Canvas canvas;
@@ -42,9 +48,26 @@ public class Game {
 
     }
 
+    public void makeBullet() {
+        System.out.println("making bullet");
+        gameObjects.add(new Bullet(bulletPoints, new Point(player.getPoints()[3].x + Canvas.MAXWIDTH / 2, player.getPoints()[3].y + Canvas.MAXHEIGHT / 2), player.rotation, 50, 50, Math.abs(player.accel.x + player.accel.y)));
+        System.out.println("made bullet");
+    }
+
     public void update() {
-        for(Polygon p : gameObjects)
+        ArrayList<Polygon> rem = new ArrayList<>();
+        for(Polygon p : gameObjects) {
             p.update();
+            if (p instanceof Bullet) {
+                if (((Bullet) p).counter > ((Bullet) p).lifetime) {
+                    rem.add(p);
+                }
+            }
+        }
+        for (Polygon p: rem) gameObjects.remove(p);
+        if (canvas.getKeys().get(' ')) {
+            makeBullet();
+        }
         player.update(canvas.getKeys());
         canvas.update(gameObjects, player);
         canvas.paint(canvas.getGraphics());
@@ -58,11 +81,10 @@ public class Game {
             gameObjects.add(new Square(squarePoints, position, 0));
         }
 
-        player = new Tank(new Point[] {new Point(0,0), new Point(0, 10), new Point(10, 10), new Point(10, 0)},new Point(0,0),0,
+        player = new Tank(new Point[] {new Point(0,0), new Point(0, 10), new Point(10, 10), new Point(10, 0)},new Point(10, 10),0,
 		        10,10, ImageIO.read(new File("images/tank_blue.png")),10);
 
 	    canvas = new Canvas(player);
-
 
         canvas.update(gameObjects, player);
 

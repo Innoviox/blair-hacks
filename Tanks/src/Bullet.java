@@ -7,8 +7,8 @@ public class Bullet extends Polygon {
     public int lifetime = 40; //how long it stays on the screen
     public int counter = 0; //how long it's been alive
 
-    public Bullet(Point[] inShape, Point inPosition, double inRotation, int width, int height, BufferedImage image, double stepinc) {
-        super(inShape, inPosition, inRotation, width, height, image);	 //call super constructor
+    public Bullet(Point[] inShape, Point inPosition, double inRotation, int width, int height, double stepinc) {
+        super(inShape, inPosition, inRotation, width, height, null);	 //call super constructor
         step += stepinc; //increase speed
         color = Color.blue;
     }
