@@ -1,14 +1,34 @@
+import java.util.ArrayList;
+import java.util.List;
 
-public class Game{
+public class Game {
 
-	private Canvas game;
+	private Canvas canvas;
 
-	public static void main(String args[]){
-		new Game();
+	private List<Square> squares;
+
+	public static void main(String args[]) {
+		Game g = new Game();
+
+		g.start();
 	}
 
-	public Game(){
-		game = new Canvas();
+	public void start() {
+		//TODO implement startup
+		canvas.paint(canvas.getGraphics());
+
+
+
+
+
+	}
+
+
+	public Game() {
+		canvas = new Canvas();
+		squares = new ArrayList<>();
+		canvas.setVisible(true);
+
 	}
 
 }
