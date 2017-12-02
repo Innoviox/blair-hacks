@@ -41,15 +41,10 @@ public class Game {
     }
 
     public void update() {
-        System.out.println("u");
-        //TODO update!
-	    System.out.println("u");
         for(Polygon p : gameObjects)
             p.update();
 
-//        player.update();
         canvas.update(gameObjects);
-
         canvas.paint(canvas.getGraphics());
     }
 

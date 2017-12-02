@@ -8,12 +8,12 @@ public class Square extends Damagable {
     public static final int WIDTH = 10;
     public static final int HEIGHT = 10;
     public Square(Point[] inShape, Point inPosition, double inRotation) throws IOException{
-        super(inShape, inPosition, inRotation, WIDTH, HEIGHT, ImageIO.read(new File("Tanks/images/square.png")), r.nextInt(50) + 50);
+        super(inShape, inPosition, inRotation, WIDTH, HEIGHT, ImageIO.read(new File("images/square.png")), r.nextInt(50) + 50);
     }
 
     @Override
     public void move() {
-        System.out.println("m");
+        this.hb.move();
         this.rotate(r.nextInt(2));
         // this.health = Math.max(0, this.health - 1);
     }
