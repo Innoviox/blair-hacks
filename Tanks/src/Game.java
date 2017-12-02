@@ -83,10 +83,12 @@ public class Game {
                 count++;
                 ((Square) p).update(gameObjects);
 
-                if (player.distance(p).magnitude() > 1000) {
+                if (player.distance(p).magnitude() > 3000) {
                     rem.add(p);
                 }
             }
+
+
             if (p instanceof Bullet) {
                 if (((Bullet) p).counter > ((Bullet) p).lifetime) {
                     rem.add(p);
@@ -104,7 +106,7 @@ public class Game {
             }
         }
 
-        if (new Random().nextInt(count) == 1) {
+        if (new Random().nextInt(count/2) == 1) {
             Point position = new Point(r.nextInt(Canvas.MAXWIDTH), r.nextInt(Canvas.MAXHEIGHT));
             try {
                 gameObjects.add(new Square(squarePoints, position, 0));
@@ -118,6 +120,7 @@ public class Game {
         if (canvas.getKeys().get(' ')) {
             makeBullet();
         }
+
         player.update(canvas.getKeys());
         canvas.update(gameObjects, player);
         canvas.paint(canvas.getGraphics());
@@ -139,7 +142,6 @@ public class Game {
         canvas.update(gameObjects, player);
 
         canvas.setVisible(true);
-
     }
 
 }
