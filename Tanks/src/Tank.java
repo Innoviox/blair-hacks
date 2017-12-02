@@ -93,7 +93,13 @@ public class Tank extends Damagable {
     	left = keys.get('a');
     	right = keys.get('d');
     	front = keys.get('w');
+<<<<<<< HEAD
 		move();
+=======
+        move();
+
+
+>>>>>>> a8b4a0f91b3245f18a5b0bf59e42f8fb469d45ce
     }
 
 
