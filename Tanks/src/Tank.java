@@ -23,6 +23,7 @@ public class Tank extends Damagable {
 
 	private int level;
 
+	private int damage = 1;
 	private int rateOfFire = 10;
 	private int xp;
 
@@ -132,7 +133,7 @@ public class Tank extends Damagable {
     	right = keys.get('d');
     	front = keys.get('w');
 		move();
-		if(xp > level * level * 50){
+		if(xp > level * level ){
 			levelup();
 		}
     }
@@ -145,8 +146,7 @@ public class Tank extends Damagable {
     	upgrades.put(1,"Speed");
     	upgrades.put(2,"Damage");
     	upgrades.put(3,"Health");
-    	upgrades.put(0,"ajlsdkjajlskd");
-    	upgrades.put(4,"ajlsdkjals123123");
+    	upgrades.put(0,"Rate of Fire");
 
 		Random r = new Random();
     	Object[] possibilities = {upgrades.get(r.nextInt(upgrades.size())),upgrades.get(r.nextInt(upgrades.size())),upgrades.get(r.nextInt(upgrades.size()))};
@@ -159,7 +159,19 @@ public class Tank extends Damagable {
 			    possibilities,
 			    possibilities[0]);
 
-
+		if(s.contains("Speed")){
+			speed += speed *.2;
+		}
+		if(s.contains("Damage")){
+			damage ++;
+		}
+		if(s.contains("Health")){
+				this.health += this.max_health - health + 50;
+				this.max_health += 50;
+		}
+		if(s.contains("Rate of Fire")){
+			rateOfFire = (rateOfFire > 5) ? rateOfFire -1 : rateOfFire;
+		}
 
 
 
@@ -213,4 +225,13 @@ public class Tank extends Damagable {
 	public void setRateOfFire(int rateOfFire) {
 		this.rateOfFire = rateOfFire;
 	}
+
+	public int getDamage() {
+		return damage;
+	}
+
+	public void setDamage(int damage) {
+		this.damage = damage;
+	}
+
 }

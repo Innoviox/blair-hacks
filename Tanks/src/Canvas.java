@@ -40,7 +40,7 @@ public class Canvas extends JFrame implements KeyListener{
 	public void paint(Graphics g) {
 			Graphics b = bi.getGraphics();
 
-			b.setColor(Color.white);
+			b.setColor(Color.black);
 
 			b.fillRect(0,0,MAXWIDTH,MAXHEIGHT);
 
