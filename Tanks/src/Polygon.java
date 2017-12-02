@@ -97,6 +97,10 @@ public abstract class Polygon {
 
     }
 
+    public Point distance(Polygon p){
+        return new Point(p.position.x - position.x, p.position.y-position.y);
+    }
+
     /**
      * Check if this polygon is colliding with another
      * This method checks by comparing to see if
