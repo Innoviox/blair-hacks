@@ -18,6 +18,11 @@ public class Tank extends Damagable {
     public BufferedImage image;
     public final int MAX_ACCEL = 15;
 
+	private int level;
+
+	private int rateOfFire = 10;
+	private int xp;
+
     public Tank(Point[] inShape, Point inPosition, double inRotation, int width, int height, BufferedImage image, int health) throws IOException {
         super(inShape, inPosition, inRotation, width, height, ImageIO.read(new File("images/tank_blue.png")), health);
     }
@@ -96,8 +101,16 @@ public class Tank extends Damagable {
     	right = keys.get('d');
     	front = keys.get('w');
 		move();
+		if(xp > level * level * 50){
+			levelup();
+		}
     }
 
+    public void levelup(){
+    	level++;
+    	xp = 0;
+    	rateOfFire --;
+    }
 
     @Override
     public Polygon[] destroy() {
@@ -127,4 +140,20 @@ public class Tank extends Damagable {
 
         return oldShipPoints;
     }
+	public int getXp() {
+		return xp;
+	}
+
+	public void setXp(int xp) {
+
+		this.xp = xp;
+	}
+
+	public int getRateOfFire() {
+		return rateOfFire;
+	}
+
+	public void setRateOfFire(int rateOfFire) {
+		this.rateOfFire = rateOfFire;
+	}
 }
