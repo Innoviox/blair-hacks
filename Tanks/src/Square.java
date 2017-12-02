@@ -38,6 +38,26 @@ public class Square extends Damagable {
 
         aX += x / 300;
         aY += y / 300;
+
+        if(aX > 2)
+            aX = 2;
+        if ( aX < -2)
+            aX = -2;
+        if(aY > 2)
+            aY = 2;
+        if(aY < -2)
+            aY = -2;
+
+
+        if(vX > 5)
+            vX = 5;
+        if ( vX < -5)
+            vX = -5;
+        if(vY > 5)
+            vY = 5;
+        if(vY < -5)
+            vY = -5;
+
         move();
     }
 

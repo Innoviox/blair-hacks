@@ -79,7 +79,6 @@ public class Game {
                 }
             }
             if (player.collides(p)) {
-                System.out.println("p-collision");
                 damage(p, rem);
                 damage(player, rem);
             }
