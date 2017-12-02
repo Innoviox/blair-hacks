@@ -55,13 +55,19 @@ public class Game {
     public void update() {
         ArrayList<Polygon> rem = new ArrayList<>();
         for(Polygon p : gameObjects) {
-            p.update();
+        	if(!(p instanceof Square)) {
+		        p.update();
+	        }else{
+		        ((Square) p).update(gameObjects);
+	        }
             if (p instanceof Bullet) {
                 if (((Bullet) p).counter > ((Bullet) p).lifetime) {
                     rem.add(p);
                 }
             }
         }
+
+
         for (Polygon p: rem) gameObjects.remove(p);
         if (canvas.getKeys().get(' ')) {
             makeBullet();

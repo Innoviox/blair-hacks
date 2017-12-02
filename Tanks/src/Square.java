@@ -36,9 +36,9 @@ public class Square extends Damagable {
         x = 1/x;
         y = 1/y;
 
-        aX += x / 3;
-        aY += y / 3;
-
+        aX += x / 300;
+        aY += y / 300;
+        move();
     }
 
 
@@ -47,8 +47,7 @@ public class Square extends Damagable {
     public void move() {
         this.hb.move();
 
-        this.position.x += vX;
-        this.position.y += vY;
+        position = new Point(position.x + vX, position.y + vY);
 
         vX += aX;
         vY += aY;
