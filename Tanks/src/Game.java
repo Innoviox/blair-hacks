@@ -115,7 +115,7 @@ public class Game {
         }
 
 
-        for (Polygon p : rem) gameObjects.remove(p);
+        gameObjects.removeAll(rem);
         if (canvas.getKeys().get(' ')) {
             makeBullet();
         }

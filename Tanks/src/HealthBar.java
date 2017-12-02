@@ -1,6 +1,4 @@
 import java.awt.*;
-import java.awt.image.BufferedImage;
-import java.util.Arrays;
 
 public class HealthBar extends Polygon {
     private Damagable obj;
@@ -11,7 +9,7 @@ public class HealthBar extends Polygon {
             new Point(10, 10),
             new Point(10, 0)
     };
-    public HealthBar(Damagable obj) {
+    HealthBar(Damagable obj) {
         super(BAR_SHAPE, obj.position, obj.rotation, obj.max_health, obj.height, null);
         this.shape[2].x = obj.max_health;
         this.shape[3].x = obj.max_health;
@@ -52,7 +50,7 @@ public class HealthBar extends Polygon {
             x[i] = (int)points[i].getX();
             y[i] = (int)points[i].getY();
         }
-        brush.setColor(color.black);
+        brush.setColor(Color.black);
         brush.drawPolygon(x, y, pl);
 
 
@@ -68,7 +66,7 @@ public class HealthBar extends Polygon {
             x[i] = (int)points[i].getX();
             y[i] = (int)points[i].getY();
         }
-        brush.setColor(color.green);
+        brush.setColor(Color.green);
         brush.fillPolygon(x, y, pl);
     }
 }
