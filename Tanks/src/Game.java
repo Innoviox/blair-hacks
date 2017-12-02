@@ -32,12 +32,7 @@ public class Game {
     public void start() {
         canvas.paint(canvas.getGraphics());
 
-        update = new Runnable() {
-            @Override
-            public void run() {
-                update();
-            }
-        };
+        update = () -> update();
 
         scheduler.scheduleAtFixedRate(update, 1, 1000/60, TimeUnit.MILLISECONDS);
 
