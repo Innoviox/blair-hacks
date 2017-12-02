@@ -46,7 +46,9 @@ public class Game {
         for(Polygon p : gameObjects)
             p.update();
 
-        canvas.update(gameObjects);
+        player.update(canvas.getKeys());
+
+        canvas.update(gameObjects, player);
         canvas.paint(canvas.getGraphics());
     }
 
@@ -64,7 +66,7 @@ public class Game {
 	    canvas = new Canvas(player);
 
 
-        canvas.update(gameObjects);
+        canvas.update(gameObjects, player);
 
         canvas.setVisible(true);
 

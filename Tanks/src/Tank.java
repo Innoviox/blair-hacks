@@ -6,6 +6,7 @@ import java.awt.geom.AffineTransform;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
+import java.util.Map;
 
 public class Tank extends Damagable {
     protected boolean left = false, right = false, front = false, shoot = false; //direction vectors
@@ -85,6 +86,16 @@ public class Tank extends Damagable {
         accel.x = Math.min(Math.max(accel.x, -MAX_ACCEL), MAX_ACCEL); //maximum speed
         accel.y = Math.min(Math.max(accel.y, -MAX_ACCEL), MAX_ACCEL);
     }
+
+    public void update(Map<Character,Boolean> keys){
+    	left = keys.get('a');
+    	right = keys.get('d');
+    	front = keys.get('w');
+
+
+
+    }
+
 
     @Override
     public Polygon[] destroy() {

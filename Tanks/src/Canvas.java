@@ -18,6 +18,8 @@ public class Canvas extends JFrame implements KeyListener{
 
 	private List<? extends Polygon> objects;
 
+	private Tank player;
+
 	BufferedImage bi = new BufferedImage(MAXWIDTH, MAXHEIGHT, BufferedImage.TYPE_INT_RGB);
 
 	public Canvas(Tank player) {
@@ -41,6 +43,8 @@ public class Canvas extends JFrame implements KeyListener{
 
 			b.fillRect(0,0,MAXWIDTH,MAXHEIGHT);
 
+			player.paint(b, cameraTranslation);
+
 			for (Polygon p : objects)
 				p.paint(b, cameraTranslation);
 			g = this.getGraphics();
@@ -48,8 +52,9 @@ public class Canvas extends JFrame implements KeyListener{
 			g.drawImage(bi, 0, 0, null);
 	}
 
-	public void update(List<? extends Polygon> p) {
+	public void update(List<? extends Polygon> p, Tank player) {
 		objects = p;
+		this.player = player;
 	}
 
 	public Map<Character,Boolean> getKeys(){
