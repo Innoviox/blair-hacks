@@ -131,6 +131,7 @@ public class Game {
 				rem.add(p);
 				player.setXp(player.getXp() + d.max_health);
 			}
+			//p.recoil();
 		} catch (ClassCastException e) {
 		}
 	}
