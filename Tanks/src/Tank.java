@@ -33,9 +33,8 @@ public class Tank extends Damagable {
 			x[i] = (int)points[i].getX() + Canvas.MAXWIDTH / 2;
 			y[i] = (int)points[i].getY() + Canvas.MAXHEIGHT / 2;
 		}
-		System.out.println(Arrays.toString(points));
-        brush.setColor(Color.blue);
-        brush.fillPolygon(x, y, pl);
+//        brush.setColor(Color.blue);
+    //    brush.fillPolygon(x, y, pl);
 
 		AffineTransform at = new AffineTransform();
 		at.translate(Canvas.MAXWIDTH/2 - img.getWidth() / 4
