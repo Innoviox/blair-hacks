@@ -9,8 +9,6 @@ public abstract class Polygon {
     public Point[] shape;   // An array of points.
     public Point position;   // The offset mentioned above.
 
-    public Point cameraTranslation = Canvas.cameraTranslation;
-
     public double rotation; // Zero degrees is due east.
     public int width, height;
     public BufferedImage img;
@@ -72,7 +70,7 @@ public abstract class Polygon {
 
     public void rotate(int degrees) {rotation = (rotation+degrees)%360;}
 
-    public void paint(Graphics brush) {
+    public void paint(Graphics brush, Point cameraTranslation) {
 
         Point[] points = this.getPoints();
         int pl = points.length;

@@ -18,8 +18,8 @@ public abstract class Damagable extends Polygon {
 
 
     @Override
-    public void paint(Graphics brush) {
-        super.paint(brush);
-        this.hb.paint(brush);
+    public void paint(Graphics brush, Point cameraTranslation) {
+        super.paint(brush, cameraTranslation);
+        this.hb.paint(brush, cameraTranslation);
     }
 }

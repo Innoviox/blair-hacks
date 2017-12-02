@@ -24,6 +24,8 @@ public class Canvas extends JFrame implements KeyListener{
 		this.setSize(MAXWIDTH, MAXHEIGHT);
 		this.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
 
+		cameraTranslation = player.position;
+		System.out.println(cameraTranslation);
 		keys = new HashMap<>();
 		keys.put('w',false);
 		keys.put('s',false);
@@ -40,7 +42,7 @@ public class Canvas extends JFrame implements KeyListener{
 			b.fillRect(0,0,MAXWIDTH,MAXHEIGHT);
 
 			for (Polygon p : objects)
-				p.paint(b);
+				p.paint(b, cameraTranslation);
 			g = this.getGraphics();
 
 			g.drawImage(bi, 0, 0, null);
