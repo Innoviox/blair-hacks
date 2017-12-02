@@ -35,4 +35,5 @@ public class Bullet extends Polygon {
         }
         brush.fillPolygon(x, y, pl);
     }
+
 }

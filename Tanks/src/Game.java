@@ -10,6 +10,10 @@ public class Game {
 
 	private List<Square> squares;
 
+	private List<Bullet> bullets;
+
+	private Tank player;
+
 	private Runnable update;
 
 	private final ScheduledExecutorService scheduler = Executors.newScheduledThreadPool(1);
@@ -27,6 +31,7 @@ public class Game {
 			@Override
 			public void run() {
 				update();
+				canvas.paint(canvas.getGraphics());
 			}
 		};
 
@@ -36,11 +41,22 @@ public class Game {
 
 	public void update() {
 		//TODO update!
+		for(Square s : squares)
+			s.update();
+
+		for(Bullet b : bullets)
+			b.update();
+
+		player.update();
 	}
 
 	public Game() {
 		canvas = new Canvas();
 		squares = new ArrayList<>();
+		bullets = new ArrayList<>();
+
+//		player = new Tank();
+
 		canvas.setVisible(true);
 
 	}
