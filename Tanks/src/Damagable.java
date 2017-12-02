@@ -29,7 +29,7 @@ public abstract class Damagable extends Polygon {
         yPoints[2] = bottom + 10;
         yPoints[3] = bottom;
 
-        brush.setColor(Color.white);
+        brush.setColor(Color.black);
         brush.drawPolygon(xPoints, yPoints, 4);
 
         xPoints[2] = back + health;
