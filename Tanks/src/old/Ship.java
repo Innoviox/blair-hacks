@@ -127,7 +127,7 @@ public class Ship extends Polygon implements KeyListener {
 	public void keyPressed(KeyEvent e) {
 		int keyCode = e.getKeyCode();
 	    switch( keyCode ) { 
-	    		case KeyEvent.VK_UP: front = true; break;
+			case KeyEvent.VK_UP: front = true; break;
 		    case KeyEvent.VK_RIGHT: right = true; break;
 		    case KeyEvent.VK_LEFT: left = true; break;
 		    case KeyEvent.VK_SPACE: shoot = true; break;
