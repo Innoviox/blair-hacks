@@ -116,7 +116,7 @@ public abstract class Polygon {
     public abstract void move(); //move the polygon
     public abstract Polygon[] destroy(); //destroy the polygon
 
-
+    public void update() {move();}
 	  /*
 	  The following methods are private access restricted because, as this access
 	  level always implies, they are intended for use only as helpers of the
