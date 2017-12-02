@@ -13,7 +13,8 @@ public class Square extends Damagable {
 
     @Override
     public void move() {
-        //this.rotate(r.nextInt(2));
+        System.out.println("m");
+        this.rotate(r.nextInt(2));
         // this.health = Math.max(0, this.health - 1);
     }
 
