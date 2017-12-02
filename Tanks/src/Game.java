@@ -47,7 +47,7 @@ public class Game {
         for(Polygon p : gameObjects)
             p.update();
 
-        player.update();
+//        player.update();
         canvas.update(gameObjects);
 
         canvas.paint(canvas.getGraphics());
