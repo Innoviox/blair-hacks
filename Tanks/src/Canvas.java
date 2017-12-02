@@ -25,6 +25,10 @@ public class Canvas extends JFrame {
 		if (System.currentTimeMillis() > lastUpdate + updateRate) {
 			Graphics b = bi.getGraphics();
 
+			b.setColor(Color.white);
+
+			b.fillRect(0,0,MAXWIDTH,MAXHEIGHT);
+
 			for (Polygon p : objects)
 				p.paint(b);
 			g = this.getGraphics();
