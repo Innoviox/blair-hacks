@@ -49,13 +49,17 @@ public class Game {
     }
 
     public Game() throws IOException {
-        canvas = new Canvas();
         gameObjects = new ArrayList<>();
 
         for (int i = 0; i < 10; i++) {
             Point position = new Point(r.nextInt(Canvas.MAXWIDTH), r.nextInt(Canvas.MAXHEIGHT));
             gameObjects.add(new Square(squarePoints, position, 0));
         }
+
+        player = null;
+
+	    canvas = new Canvas(player);
+
 
         canvas.update(gameObjects);
 

@@ -41,8 +41,6 @@ public class Tank extends Damagable {
 
 	}
 
-
-
 	public void move() {
         if (right) rotate(6);
         if (left)  rotate(-6);

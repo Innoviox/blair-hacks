@@ -12,13 +12,15 @@ public class Canvas extends JFrame implements KeyListener{
 	public static final int MAXWIDTH = (int) Toolkit.getDefaultToolkit().getScreenSize().getWidth();
 	public static final int MAXHEIGHT = (int) Toolkit.getDefaultToolkit().getScreenSize().getHeight();
 
+	static public Point cameraTranslation;
+
 	private Map<Character, Boolean> keys;
 
 	private List<? extends Polygon> objects;
 
 	BufferedImage bi = new BufferedImage(MAXWIDTH, MAXHEIGHT, BufferedImage.TYPE_INT_RGB);
 
-	public Canvas() {
+	public Canvas(Tank player) {
 		this.setSize(MAXWIDTH, MAXHEIGHT);
 		this.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
 
