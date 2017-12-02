@@ -30,7 +30,7 @@ public class Tank extends Damagable {
 	private Canvas canvas;
 
     public Tank(Point[] inShape, Point inPosition, double inRotation, int width, int height, BufferedImage image, int health) throws IOException {
-        super(inShape, inPosition, inRotation, width, height, ImageIO.read(new File("images/tank_blue.png")), health);
+        super(inShape, inPosition, inRotation, width, height, image, health);
         /*
         for (Point p: shape) {
             p.setX(p.getX() + Canvas.MAXWIDTH / 2);
@@ -214,8 +214,7 @@ public class Tank extends Damagable {
 	}
 
 	public void setXp(int xp) {
-
-		this.xp = xp;
+        this.xp = xp;
 	}
 
 	public int getRateOfFire() {
