@@ -24,7 +24,7 @@ public class Bullet extends Polygon {
     }
 
     @Override
-    public void paint(Graphics brush) {
+    public void paint(Graphics brush, Point cameraTranslation) {
         Point[] points = this.getPoints();
         int pl = points.length;
         int[] x = new int[pl];

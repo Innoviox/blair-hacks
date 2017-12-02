@@ -30,7 +30,7 @@ public class HealthBar extends Polygon {
     }
 
     @Override
-    public void paint(Graphics brush) {
+    public void paint(Graphics brush, Point cameraTranslation) {
         shape = new Point[] {
                 new Point(0, BASE),
                 new Point(0, BASE + 10),
