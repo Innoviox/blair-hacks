@@ -1,19 +1,17 @@
-/**
- * The Ship class
+package old; /**
+ * The old.Ship class
  * This class is the player. It 
  * moves around and responds to
  * keys. It is the only thing the
  * player controls in this game.
  * <p>
- * ADSB PS11: Asteroids
+ * ADSB PS11: old.Asteroids
  * 10/3/17
  * @author Simon Chervenak
  */
 
 import java.awt.Color;
 import java.awt.event.*;
-import java.awt.geom.AffineTransform;
-import java.awt.image.AffineTransformOp;
 import java.awt.image.BufferedImage;
 
 public class Ship extends Polygon implements KeyListener {
@@ -21,12 +19,12 @@ public class Ship extends Polygon implements KeyListener {
 	public double speed = 0.1;
 	public int shots = 0, MAX_SHOTS = 10;
 	public double traction = 0.05; //slipperiness
-	public Point accel = new Point(0.0, 0.0); //acceleration vector represented by a Point
+	public Point accel = new Point(0.0, 0.0); //acceleration vector represented by a old.Point
 	public BufferedImage image;
 	public final int MAX_ACCEL = 15;
 	
 	/**
-	 * Construct a ship object using the Polygon constructor
+	 * Construct a ship object using the old.Polygon constructor
 	 * @param inShape points to draw shape with
 	 * @param inPosition starting position
 	 * @param inRotation starting rotation
@@ -168,7 +166,7 @@ public class Ship extends Polygon implements KeyListener {
 	 * Generate the hitbox of the ship
 	 * based on the level.
 	 * @param level current level
-	 * @return Point[] shape to draw with
+	 * @return old.Point[] shape to draw with
 	 */
 	public static Point[] generateShape(int level) {
 		Point[] oldShipPoints = new Point[]{
@@ -195,7 +193,7 @@ public class Ship extends Polygon implements KeyListener {
 				new Point(0.0, 0.0),
 		};
 		/*
-		Point[] shipPoints2 = new Point[] {
+		old.Point[] shipPoints2 = new old.Point[] {
 				
 		};
 		*/

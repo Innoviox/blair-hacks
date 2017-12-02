@@ -1,5 +1,5 @@
-/**
- * Evil Bullet
+package old; /**
+ * Evil old.Bullet
  * This class is a bullet that comes out of an evil ship.
  */
 
@@ -8,9 +8,9 @@ import java.awt.image.BufferedImage;
 
 public class EvilBullet extends Bullet {
 	/**
-	 * Construct a EvilBullet object
+	 * Construct a old.EvilBullet object
 	 * This method constructs a new
-	 * EvilBullet instance using Bullet's
+	 * old.EvilBullet instance using old.Bullet's
 	 * constructor.
 	 * @param inShape shape of bullet
 	 * @param inPosition position

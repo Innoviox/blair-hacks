@@ -1,30 +1,27 @@
-/**
+package old; /**
  * Generated when things are destroyed
- * The rubble class is an extension of Bullet
+ * The rubble class is an extension of old.Bullet
  * because it only lasts a specific amount of time
- * Rubble is ejected from things when they die.
+ * old.Rubble is ejected from things when they die.
  * <p>
- * ADSB PS11: Asteroids
+ * ADSB PS11: old.Asteroids
  * 10/3/17
  * @author Simon Chervenak
  */
 
 import java.awt.Color;
 import java.awt.Graphics;
-import java.awt.Graphics2D;
-import java.awt.geom.AffineTransform;
 import java.awt.image.BufferedImage;
 import java.util.Random;
-import java.util.concurrent.ThreadLocalRandom;
 
 public class Rubble extends Bullet {
 	private static final Random gen = new Random();
 	public Color color;
 	
 	/**
-	 * Constructs a Rubble object using the Bullet constructor
+	 * Constructs a old.Rubble object using the old.Bullet constructor
 	 * @param s origin point
-	 * @param dust is the origin type Asteroid?
+	 * @param dust is the origin type old.Asteroid?
 	 * @param color color of origin type
 	 * @param image image (null)
 	 */

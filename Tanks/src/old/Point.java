@@ -1,7 +1,7 @@
-/*
-CLASS: Point
+package old;/*
+CLASS: old.Point
 DESCRIPTION: Ah, if only real-life classes were this straight-forward. We'll
-             use 'Point' throughout the program to store and access 
+             use 'old.Point' throughout the program to store and access
              coordinates.
 */
 

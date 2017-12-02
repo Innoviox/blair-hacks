@@ -1,10 +1,10 @@
-/**
- * EvilShip class
+package old; /**
+ * old.EvilShip class
  * This class makes EvilShips, which 
  * chase after the player and shoot 
  * bullets at set intervals.
  * <p>
- * ADSB PS11: Asteroids
+ * ADSB PS11: old.Asteroids
  * 10/3/17
  * @author Simon Chervenak
  */
@@ -21,9 +21,9 @@ public class EvilShip extends Ship {
 	private BufferedImage[] images; 
 	public Ship ship; //ship to follow
 	/**
-	 * Construct an EvilShip object
-	 * This method constructs an EvilShip
-	 * object using the Ship constructor.
+	 * Construct an old.EvilShip object
+	 * This method constructs an old.EvilShip
+	 * object using the old.Ship constructor.
 	 * @param inShape shape to draw
 	 * @param inPosition position
 	 * @param width screen width
@@ -40,12 +40,12 @@ public class EvilShip extends Ship {
 	}
 	/**
 	 * Set ship that this instance is following to newShip
-	 * @param newShip new Ship to follow
+	 * @param newShip new old.Ship to follow
 	 * @return void nothing
 	 */
 	public void setShip (Ship newShip) { ship = newShip; }
 	/**
-	 * Move the EvilShip in relation to the Ship it's following
+	 * Move the old.EvilShip in relation to the old.Ship it's following
 	 * @return void nothing
 	 */
 	public void move() {
@@ -64,7 +64,7 @@ public class EvilShip extends Ship {
 		shoot = ++frame % SHOOT == 0; //shoot?
 	}
 	/**
-	 * Calculate rotation based on Ship that the instance is following
+	 * Calculate rotation based on old.Ship that the instance is following
 	 * using arctan
 	 * @return double angle to rotate
 	 */
@@ -82,8 +82,8 @@ public class EvilShip extends Ship {
 	}
 	
 	/**
-	 * Get hitbox for the EvilShip, it's just a square.
-	 * @return Point[] shape to draw
+	 * Get hitbox for the old.EvilShip, it's just a square.
+	 * @return old.Point[] shape to draw
 	 */
 	public static Point[] generateShape() {
 		return new Point[] {

@@ -1,9 +1,9 @@
-/**
- * Represents an Asteroid
+package old; /**
+ * Represents an old.Asteroid
  * This class contains, moves, and draws an
  * asteroid that the player has to shoot down.
  * <p>
- * ADSB PS11: Asteroids
+ * ADSB PS11: old.Asteroids
  * 10/3/17
  * @author Simon Chervenak
  */
@@ -11,11 +11,7 @@
 import java.awt.Color;
 import java.awt.Graphics2D;
 import java.awt.Image;
-import java.awt.geom.AffineTransform;
-import java.awt.image.AffineTransformOp;
 import java.awt.image.BufferedImage;
-import java.util.Arrays;
-import java.util.concurrent.ThreadLocalRandom;
 
 public class Asteroid extends Polygon {
 	private int step = 3; //speed
@@ -24,7 +20,7 @@ public class Asteroid extends Polygon {
 	/**
 	 * Constructor
 	 * This method sets up an asteroid
-	 * using mainly the inherited Polygon
+	 * using mainly the inherited old.Polygon
 	 * constructor.
 	 * @param inShape points to draw shape with
 	 * @param inPosition starting position
@@ -86,7 +82,7 @@ public class Asteroid extends Polygon {
 	 * This method destroys the asteroid.
 	 * It generates two new asteroids and
 	 * a bunch of dust.
-	 * @return Polygon[] objects that are generated
+	 * @return old.Polygon[] objects that are generated
 	 */
 	public Polygon[] destroy() {
 		if (w > 20 && h > 20) { //only ggenertae new asteroids if big enough
@@ -114,7 +110,7 @@ public class Asteroid extends Polygon {
 	 * @param type type of asteroid
 	 * @param w width of asteroid
 	 * @param h height of asteroid
-	 * @return Point[] shape
+	 * @return old.Point[] shape
 	 */
 	public static Point[] generateShape(int type) {
 		int w = randint(30, 50), h = randint(30, 50);

@@ -1,18 +1,18 @@
-/**
+package old; /**
  * Main class of the program
  * 
  * <p>
  * This class is the center class of the program. It instantiates all the objects, 
  * keeps track of them, paints them, and controls the game.
  * <p>
- * ADSB PS11: Asteroids
+ * ADSB PS11: old.Asteroids
  * 10/3/17
  * @author Simon Chervenak
  */
 
 /*
-CLASS: Asteroids
-DESCRIPTION: Extending Game, Asteroids is all in the paint method.
+CLASS: old.Asteroids
+DESCRIPTION: Extending old.Game, old.Asteroids is all in the paint method.
 NOTE: This class is the metaphorical "main method" of your program,
       it is your control center.
 
@@ -76,7 +76,7 @@ class Asteroids extends Game implements KeyListener {
      */
     public Asteroids() throws IOException {
     		//set up window
-        super("Asteroids!", width, height);
+        super("old.Asteroids!", width, height);
         this.setFocusable(true);
         this.requestFocus(); 
         this.addKeyListener(this);
@@ -94,15 +94,15 @@ class Asteroids extends Game implements KeyListener {
         });
         
         //set up images
-        shipImg1 = ImageIO.read(new File("ship1.png"));
-        shipImg2 = ImageIO.read(new File("ship3.png"));
-        shipImg3 = ImageIO.read(new File("ship4.png"));
+        shipImg1 = ImageIO.read(new File("images/ship1.png"));
+        shipImg2 = ImageIO.read(new File("images/ship3.png"));
+        shipImg3 = ImageIO.read(new File("images/ship4.png"));
 
 
-        asteroidImg1 = ImageIO.read(new File("asteroid1.png"));
-        asteroidImg2 = ImageIO.read(new File("asteroid2.png"));
+        asteroidImg1 = ImageIO.read(new File("images/asteroid1.png"));
+        asteroidImg2 = ImageIO.read(new File("images/asteroid2.png"));
         
-        evilShipImg1 = ImageIO.read(new File("ufo_damage0.png"));
+        evilShipImg1 = ImageIO.read(new File("images/ufo_damage0.png"));
 
         //make images smaller
         BufferedImage[] imgs = new BufferedImage[] {shipImg1, shipImg2, shipImg3, asteroidImg1, asteroidImg2, evilShipImg1};
@@ -526,7 +526,7 @@ class Asteroids extends Game implements KeyListener {
     /**
      * Score an asteroid
      * This method processes the scoring of
-     * an Asteroid death.
+     * an old.Asteroid death.
      * @param a the asteroid to be scored
      * @return void nothing
      */
@@ -585,7 +585,7 @@ class Asteroids extends Game implements KeyListener {
     
     /**
      * Main method
-     * This method instantiates and runs a new Asteroids class
+     * This method instantiates and runs a new old.Asteroids class
      * @param args N/A
      * @throws IOException if files are not found
      * @return void nothing
