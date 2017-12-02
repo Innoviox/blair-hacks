@@ -20,22 +20,28 @@ public class Tank extends Damagable {
 
     public Tank(Point[] inShape, Point inPosition, double inRotation, int width, int height, BufferedImage image, int health) throws IOException {
         super(inShape, inPosition, inRotation, width, height, ImageIO.read(new File("images/tank_blue.png")), health);
+        /*
+        for (Point p: shape) {
+            p.setX(p.getX() + Canvas.MAXWIDTH / 2);
+            p.setY(p.getY() + Canvas.MAXHEIGHT / 2);
+        }
+        */
     }
 
 
 	public void paint(Graphics brush, Point cameraTranslation) {
-
+        /*
 		Point[] points = this.getPoints();
 		int pl = points.length;
 		int[] x = new int[pl];
 		int[] y = new int[pl];
 		for (int i = 0; i < pl; i++) {
-			x[i] = (int)points[i].getX() + Canvas.MAXWIDTH / 2;
-			y[i] = (int)points[i].getY() + Canvas.MAXHEIGHT / 2;
+			x[i] = (int)points[i].getX();// + Canvas.MAXWIDTH / 2;
+			y[i] = (int)points[i].getY();// + Canvas.MAXHEIGHT / 2;
 		}
-//        brush.setColor(Color.blue);
-    //    brush.fillPolygon(x, y, pl);
-
+        brush.setColor(Color.blue);
+        brush.fillPolygon(x, y, pl);
+        */
 		AffineTransform at = new AffineTransform();
 		at.translate(Canvas.MAXWIDTH/2 - img.getWidth() / 4
 				, Canvas.MAXHEIGHT/2 - img.getHeight() / 4);
@@ -45,6 +51,21 @@ public class Tank extends Damagable {
         this.hb.paint(brush, cameraTranslation);
 
 	}
+
+	@Override    public boolean collides(Polygon other) {
+        Point pN;
+        for (Point p: other.getPoints()) {
+            pN = new Point(p.x + Canvas.MAXWIDTH / 2, p.y + Canvas.MAXHEIGHT / 2);
+            if (contains(pN)) return true;
+        }
+        for (Point p: getPoints()) {
+            pN = new Point(p.x + Canvas.MAXWIDTH / 2, p.y + Canvas.MAXHEIGHT / 2);
+            if (other.contains(pN)) return true;
+        }
+        if (contains(other.position)) return true;
+        if (other.contains(position)) return true;
+        return false;
+    }
 
 	public void move() {
         this.hb.move();
@@ -88,6 +109,10 @@ public class Tank extends Damagable {
 
         accel.x = Math.min(Math.max(accel.x, -MAX_ACCEL), MAX_ACCEL); //maximum speed
         accel.y = Math.min(Math.max(accel.y, -MAX_ACCEL), MAX_ACCEL);
+
+        hb.move();
+        hb.position.y += Canvas.MAXHEIGHT / 2;
+        hb.position.x += Canvas.MAXWIDTH / 2;
 
     }
 

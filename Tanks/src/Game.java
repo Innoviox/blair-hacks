@@ -58,7 +58,7 @@ public class Game {
             d = (Damagable) p;
             d.health--;
             if (d.health == 0) rem.add(p);
-        } catch (ClassCastException e) {}
+        } catch (ClassCastException e) {rem.add(p);}
     }
 
 
@@ -99,6 +99,7 @@ public class Game {
                 }
             }
             if (player.collides(p)) {
+                System.out.println("p-collision");
                 damage(p, rem);
                 damage(player, rem);
             }
