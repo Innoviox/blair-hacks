@@ -42,10 +42,12 @@ public class Tank extends Damagable {
 		at.rotate(Math.toRadians(rotation), findCenter().x, findCenter().y);
 		Graphics2D g2d = (Graphics2D) brush;
 		g2d.drawImage(img, at, null);
+        this.hb.paint(brush, cameraTranslation);
 
 	}
 
 	public void move() {
+        this.hb.move();
         if (right) rotate(6);
         if (left)  rotate(-6);
         if (front) {
@@ -86,6 +88,7 @@ public class Tank extends Damagable {
 
         accel.x = Math.min(Math.max(accel.x, -MAX_ACCEL), MAX_ACCEL); //maximum speed
         accel.y = Math.min(Math.max(accel.y, -MAX_ACCEL), MAX_ACCEL);
+
     }
 
     public void update(Map<Character,Boolean> keys){

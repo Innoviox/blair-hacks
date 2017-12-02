@@ -2,6 +2,7 @@ import javax.imageio.ImageIO;
 import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 import java.util.Random;
 import java.util.concurrent.Executors;
@@ -50,10 +51,18 @@ public class Game {
 
     public void makeBullet() {
       //  System.out.println("making bullet");
-        gameObjects.add(new Bullet(bulletPoints, new Point(player.getPoints()[3].x + Canvas.MAXWIDTH / 2, player.getPoints()[3].y + Canvas.MAXHEIGHT / 2), player.rotation, 50, 50, Math.abs(player.accel.x + player.accel.y)));
+        gameObjects.add(new Bullet(bulletPoints, new Point(player.getPoints()[3].x, player.getPoints()[3].y), player.rotation, 50, 50, Math.abs(player.accel.x + player.accel.y)));
       //  System.out.println("made bullet");
     }
 
+    public void damage(Polygon p, ArrayList<Polygon> rem) {
+        Damagable d;
+        try {
+            d = (Damagable) p;
+            d.health--;
+            if (d.health == 0) rem.add(p);
+        } catch (ClassCastException e) {}
+    }
     public void update() {
         ArrayList<Polygon> rem = new ArrayList<>();
         for(Polygon p : gameObjects) {
@@ -62,6 +71,16 @@ public class Game {
                 if (((Bullet) p).counter > ((Bullet) p).lifetime) {
                     rem.add(p);
                 }
+            }
+            for (Polygon p2: gameObjects) {
+                if (p != p2 && p.collides(p2)) {
+                    damage(p, rem);
+                    damage(p2, rem);
+                }
+            }
+            if (player.collides(p)) {
+                damage(p, rem);
+                damage(player, rem);
             }
         }
         for (Polygon p: rem) gameObjects.remove(p);
@@ -81,8 +100,8 @@ public class Game {
             gameObjects.add(new Square(squarePoints, position, 0));
         }
 
-        player = new Tank(new Point[] {new Point(0,0), new Point(0, 40), new Point(40, 40), new Point(40, 20), new Point(40, 0)},new Point(0, 0),0,
-		        10,10, ImageIO.read(new File("images/tank_blue.png")),10);
+        player = new Tank(new Point[] {new Point(0,0), new Point(0, 40), new Point(40, 40), new Point(40, 20), new Point(40, 0)},new Point(Canvas.MAXWIDTH/2, Canvas.MAXHEIGHT/2),0,
+		        10,10, ImageIO.read(new File("images/tank_blue.png")),100);
 
 	    canvas = new Canvas(player);
 
