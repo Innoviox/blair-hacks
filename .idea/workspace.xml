@@ -2,23 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1f4c6c76-5ef4-445c-b9df-25f3353624b8" name="Default" comment="">
-      <change beforePath="" afterPath="$PROJECT_DIR$/Tanks/.idea/uiDesigner.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/Tanks/src/Point.java" />
-      <change beforePath="$PROJECT_DIR$/Tanks/.idea/workspace.xml" afterPath="$PROJECT_DIR$/Tanks/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/Tanks/src/Bullet.java" afterPath="$PROJECT_DIR$/Tanks/src/Bullet.java" />
       <change beforePath="$PROJECT_DIR$/Tanks/src/Game.java" afterPath="$PROJECT_DIR$/Tanks/src/Game.java" />
-      <change beforePath="$PROJECT_DIR$/Tanks/src/Polygon.java" afterPath="$PROJECT_DIR$/Tanks/src/Polygon.java" />
-      <change beforePath="$PROJECT_DIR$/Tanks/src/Tank.java" afterPath="$PROJECT_DIR$/Tanks/src/Tank.java" />
-      <change beforePath="$PROJECT_DIR$/Tanks/src/old/Asteroid.java" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Tanks/src/old/Asteroids.java" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Tanks/src/old/Bullet.java" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Tanks/src/old/EvilBullet.java" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Tanks/src/old/EvilShip.java" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Tanks/src/old/Game.java" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Tanks/src/old/Point.java" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Tanks/src/old/Polygon.java" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Tanks/src/old/Rubble.java" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Tanks/src/old/Ship.java" afterPath="" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -29,11 +13,36 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="Game.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Game.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Tanks/src/Game.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="34">
-              <caret line="2" column="1" lean-forward="true" selection-start-line="2" selection-start-column="1" selection-end-line="2" selection-end-column="1" />
+            <state relative-caret-position="170">
+              <caret line="10" column="28" lean-forward="false" selection-start-line="10" selection-start-column="28" selection-end-line="10" selection-end-column="28" />
+              <folding>
+                <element signature="e#83#84#0" expanded="true" />
+                <element signature="e#100#101#0" expanded="true" />
+                <element signature="e#117#118#0" expanded="true" />
+                <element signature="e#143#144#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Canvas.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/Tanks/src/Canvas.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="68">
+              <caret line="5" column="18" lean-forward="true" selection-start-line="5" selection-start-column="18" selection-end-line="5" selection-end-column="18" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Polygon.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Tanks/src/Polygon.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="161">
+              <caret line="24" column="29" lean-forward="false" selection-start-line="24" selection-start-column="29" selection-end-line="24" selection-end-column="29" />
               <folding />
             </state>
           </provider>
@@ -254,12 +263,12 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1512238142930</updated>
-      <workItem from="1512238145436" duration="1259000" />
+      <workItem from="1512238145436" duration="1405000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="1259000" />
+    <option name="totallyTimeSpent" value="1405000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
@@ -305,18 +314,31 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/Tanks/src/Canvas.java">
+    <entry file="file://$PROJECT_DIR$/Tanks/src/Polygon.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="8" column="20" lean-forward="false" selection-start-line="8" selection-start-column="20" selection-end-line="8" selection-end-column="20" />
+        <state relative-caret-position="161">
+          <caret line="24" column="29" lean-forward="false" selection-start-line="24" selection-start-column="29" selection-end-line="24" selection-end-column="29" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Tanks/src/Game.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="1" lean-forward="true" selection-start-line="2" selection-start-column="1" selection-end-line="2" selection-end-column="1" />
+        <state relative-caret-position="170">
+          <caret line="10" column="28" lean-forward="false" selection-start-line="10" selection-start-column="28" selection-end-line="10" selection-end-column="28" />
+          <folding>
+            <element signature="e#83#84#0" expanded="true" />
+            <element signature="e#100#101#0" expanded="true" />
+            <element signature="e#117#118#0" expanded="true" />
+            <element signature="e#143#144#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Tanks/src/Canvas.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="5" column="18" lean-forward="true" selection-start-line="5" selection-start-column="18" selection-end-line="5" selection-end-column="18" />
           <folding />
         </state>
       </provider>
