@@ -33,23 +33,17 @@ public class HealthBar extends Polygon {
         shape = new Point[] {
                 new Point(0, BASE),
                 new Point(0, BASE + 10),
-                new Point(obj.max_health, BASE + 10),
-                new Point(obj.max_health, BASE)
+                new Point(obj.max_health / 2, BASE + 10),
+                new Point(obj.max_health / 2, BASE)
         };
-        Point[] points = this.getPoints();
-        int pl = points.length;
-        int[] x = new int[pl];
-        int[] y = new int[pl];
-        for (int i = 0; i < pl; i++) {
-            x[i] = (int)points[i].getX();
-            y[i] = (int)points[i].getY();
-        }
-        brush.setColor(Color.black);
-        //brush.drawPolygon(x, y, pl);
+        Point[] points;
+        int pl;
+        int[] x;
+        int[] y;
 
 
-        shape[2] = new Point(obj.health, BASE + 10);
-        shape[3] = new Point(obj.health, BASE);
+        shape[2] = new Point(obj.health / 2, BASE + 10);
+        shape[3] = new Point(obj.health / 2, BASE);
         points = this.getPoints();
         pl = points.length;
         x = new int[pl];
