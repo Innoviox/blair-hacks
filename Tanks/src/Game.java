@@ -86,7 +86,8 @@ public class Game {
 				count++;
 				((Square) p).update(gameObjects);
 
-				if (player.distance(p).magnitude() > 2000) {
+				if (player.distance(p).magnitude() > Math.sqrt(Canvas.MAXHEIGHT * Canvas.
+						MAXHEIGHT + Canvas.MAXWIDTH * Canvas.MAXWIDTH)) {
 					rem.add(p);
 				}
 			}
@@ -109,7 +110,7 @@ public class Game {
 			}
 		}
 
-		if (new Random().nextInt(count / 2) == 1) {
+		if (new Random().nextInt(count) == 1) {
 			Point position = new Point(r.nextInt(Canvas.MAXWIDTH), r.nextInt(Canvas.MAXHEIGHT));
 			try {
 				gameObjects.add(new Square(squarePoints, position, 0));
