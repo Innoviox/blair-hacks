@@ -15,7 +15,7 @@ public class Square extends Damagable {
     public void move() {
         this.hb.move();
         this.rotate(r.nextInt(2));
-        // this.health = Math.max(0, this.health - 1);
+        this.health = Math.max(0, this.health - 1);
     }
 
     @Override

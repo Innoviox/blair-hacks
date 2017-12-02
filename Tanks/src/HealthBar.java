@@ -1,5 +1,6 @@
 import java.awt.*;
 import java.awt.image.BufferedImage;
+import java.util.Arrays;
 
 public class HealthBar extends Polygon {
     private Damagable obj;
@@ -44,15 +45,11 @@ public class HealthBar extends Polygon {
             y[i] = (int)points[i].getY();
         }
         brush.setColor(Color.black);
-        brush.fillPolygon(x, y, pl);
+        //brush.drawPolygon(x, y, pl);
 
 
-        shape = new Point[] {
-                new Point(0, BASE),
-                new Point(0, BASE + 10),
-                new Point(obj.health, BASE + 10),
-                new Point(obj.health, BASE)
-        };
+        shape[2] = new Point(obj.health, BASE + 10);
+        shape[3] = new Point(obj.health, BASE);
         points = this.getPoints();
         pl = points.length;
         x = new int[pl];
