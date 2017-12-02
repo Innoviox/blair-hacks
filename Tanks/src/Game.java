@@ -39,7 +39,8 @@ public class Game {
     }
 
     public void update() {
-        //TODO update!
+        for (Square s: squares) s.update();
+        canvas.update(squares);
     }
 
     public Game() throws IOException {
