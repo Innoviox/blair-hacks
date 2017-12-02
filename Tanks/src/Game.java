@@ -63,7 +63,7 @@ public class Game {
                 count++;
                 ((Square) p).update(gameObjects);
 
-                if (player.distance(p).magnitude() > 1000) {
+                if (player.distance(p).magnitude() > Math.sqrt(Canvas.MAXWIDTH * Canvas.MAXWIDTH + Canvas.MAXHEIGHT * Canvas.MAXHEIGHT)) {
                     rem.add(p);
                 }
             }

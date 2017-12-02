@@ -57,7 +57,8 @@ public class Tank extends Damagable {
 
 	}
 
-	@Override    public boolean collides(Polygon other) {
+	@Override
+	public boolean collides(Polygon other) {
         Point pN;
         for (Point p: other.getPoints()) {
             pN = new Point(p.x + Canvas.MAXWIDTH / 2, p.y + Canvas.MAXHEIGHT / 2);
