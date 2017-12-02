@@ -33,6 +33,7 @@ public class Bullet extends Polygon {
             x[i] = (int)points[i].getX();
             y[i] = (int)points[i].getY();
         }
+        brush.setColor(Color.green);
         brush.fillPolygon(x, y, pl);
     }
 
