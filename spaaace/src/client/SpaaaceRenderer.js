@@ -7,7 +7,7 @@ const Utils= require('./../common/Utils');
 const Missile = require('../common/Missile');
 const Ship = require('../common/Ship');
 const ShipActor = require('./ShipActor');
-
+const Square = require('../common/Square');
 /**
  * Renderer for the Spaaace client - based on Pixi.js
  */
@@ -21,7 +21,8 @@ class SpaaaceRenderer extends Renderer {
             bg2: 'assets/space2.png',
             bg3: 'assets/clouds2.png',
             bg4: 'assets/clouds1.png',
-            smokeParticle: 'assets/smokeparticle.png'
+            smokeParticle: 'assets/smokeparticle.png',
+            square: 'assets/square.png',
         };
     }
 
@@ -315,6 +316,14 @@ class SpaaaceRenderer extends Renderer {
 
         } else if (objData.class == Missile) {
             sprite = new PIXI.Sprite(PIXI.loader.resources.missile.texture);
+            this.sprites[objData.id] = sprite;
+
+            sprite.width = 81 * 0.5;
+            sprite.height = 46 * 0.5;
+
+            sprite.anchor.set(0.5, 0.5);
+        } else if (objData.class == Square) {
+            sprite = new PIXI.Sprite(PIXI.loader.resources.square.texture);
             this.sprites[objData.id] = sprite;
 
             sprite.width = 81 * 0.5;

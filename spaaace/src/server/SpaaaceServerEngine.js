@@ -31,6 +31,8 @@ class SpaaaceServerEngine extends ServerEngine {
                 setTimeout(() => this.makeBot(), 5000);
             }
         });
+        //setInterval(() => {this.io.sockets.emit("squareCreate", this.gameEngine);}, 1000);
+
     }
 
     onPlayerConnected(socket) {
@@ -44,6 +46,8 @@ class SpaaaceServerEngine extends ServerEngine {
                 name: nameGenerator('general')
             };
             this.updateScore();
+          //  for (let i = 0; i < 100; i++) this.gameEngine.makeSquare();
+
         };
 
         // handle client restart requests

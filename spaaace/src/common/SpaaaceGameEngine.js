@@ -3,6 +3,7 @@
 const GameEngine = require('lance-gg').GameEngine;
 const Missile= require('./Missile');
 const Ship = require('./Ship');
+const Square = require('./Square');
 const TwoVector = require('lance-gg').serialize.TwoVector;
 const Timer = require('./Timer');
 
@@ -40,6 +41,7 @@ class SpaaaceGameEngine extends GameEngine {
         });
 
         this.on('postStep', this.reduceVisibleThrust.bind(this));
+        this.on('squareCreate', this.makeSquare);
     };
 
     reduceVisibleThrust(postStepEv) {
@@ -92,6 +94,17 @@ class SpaaaceGameEngine extends GameEngine {
         ship.playerId = playerId;
         this.addObjectToWorld(ship);
         console.log(`ship added: ${ship.toString()}`);
+
+        return ship;
+    };
+
+    makeSquare() {
+        let sqY = Math.floor(Math.random()*(this.worldSettings.width-200)) + 200;
+        let sqX = Math.floor(Math.random()*(this.worldSettings.height-200)) + 200;
+
+        let ship = new Square(++this.world.idCount, this, new TwoVector(sqX, sqY), 50);
+        this.addObjectToWorld(ship);
+        console.log(`square added: ${ship.toString()}`);
 
         return ship;
     };
