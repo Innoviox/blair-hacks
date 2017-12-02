@@ -49,9 +49,7 @@ public class Game {
     }
 
     public void makeBullet() {
-        System.out.println("making bullet");
         gameObjects.add(new Bullet(bulletPoints, new Point(player.getPoints()[3].x + Canvas.MAXWIDTH / 2, player.getPoints()[3].y + Canvas.MAXHEIGHT / 2), player.rotation, 50, 50, Math.abs(player.accel.x + player.accel.y)));
-        System.out.println("made bullet");
     }
 
     public void update() {
