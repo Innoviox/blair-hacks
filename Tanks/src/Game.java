@@ -10,13 +10,13 @@ import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.TimeUnit;
 
 public class Game {
-    private static final Point[] squarePoints = new Point[] {
+    private static final Point[] squarePoints = new Point[]{
             new Point(0, 0),
             new Point(0, Square.HEIGHT),
             new Point(Square.WIDTH, Square.HEIGHT),
             new Point(Square.WIDTH, 0)
     };
-    private static final Point[] bulletPoints = new Point[] {
+    private static final Point[] bulletPoints = new Point[]{
             new Point(0, 0),
             new Point(0, 2),
             new Point(10, 2),
@@ -32,6 +32,10 @@ public class Game {
 
     private Tank player;
 
+    private int updates = 0;
+
+    private int lastShot = 0;
+
     private final ScheduledExecutorService scheduler = Executors.newScheduledThreadPool(1);
 
     public static void main(String args[]) throws IOException {
@@ -44,17 +48,7 @@ public class Game {
         canvas.paint(canvas.getGraphics());
 
         update = () -> update();
-
-        scheduler.scheduleAtFixedRate(update, 1, 1000/60, TimeUnit.MILLISECONDS);
-
     }
-
-    public void makeBullet() {
-      //  System.out.println("making bullet");
-        gameObjects.add(new Bullet(bulletPoints, new Point(player.getPoints()[3].x, player.getPoints()[3].y), player.rotation, 50, 50, Math.abs(player.accel.x + player.accel.y)));
-      //  System.out.println("made bullet");
-    }
-
     public void damage(Polygon p, ArrayList<Polygon> rem) {
         Damagable d;
         try {
@@ -63,10 +57,33 @@ public class Game {
             if (d.health == 0) rem.add(p);
         } catch (ClassCastException e) {}
     }
+
+
+    public void makeBullet() {
+
+        if (updates - lastShot > 10) {
+            lastShot = updates;
+            gameObjects.add(new Bullet(bulletPoints, new Point(player.getPoints()[3].x + Canvas.MAXWIDTH / 2, player.getPoints()[3].y + Canvas.MAXHEIGHT / 2), player.rotation, 50, 50, Math.abs(player.accel.x + player.accel.y)));
+        }
+    }
+
+
+
     public void update() {
+        int count = 0;
+        updates++;
         ArrayList<Polygon> rem = new ArrayList<>();
-        for(Polygon p : gameObjects) {
-            p.update();
+        for (Polygon p : gameObjects) {
+            if (!(p instanceof Square)) {
+                p.update();
+            } else {
+                count++;
+                ((Square) p).update(gameObjects);
+
+                if (player.distance(p).magnitude() > 1000) {
+                    rem.add(p);
+                }
+            }
             if (p instanceof Bullet) {
                 if (((Bullet) p).counter > ((Bullet) p).lifetime) {
                     rem.add(p);
@@ -83,7 +100,18 @@ public class Game {
                 damage(player, rem);
             }
         }
-        for (Polygon p: rem) gameObjects.remove(p);
+
+        if (new Random().nextInt(count) == 1) {
+            Point position = new Point(r.nextInt(Canvas.MAXWIDTH), r.nextInt(Canvas.MAXHEIGHT));
+            try {
+                gameObjects.add(new Square(squarePoints, position, 0));
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
+
+
+        for (Polygon p : rem) gameObjects.remove(p);
         if (canvas.getKeys().get(' ')) {
             makeBullet();
         }
@@ -100,10 +128,10 @@ public class Game {
             gameObjects.add(new Square(squarePoints, position, 0));
         }
 
-        player = new Tank(new Point[] {new Point(0,0), new Point(0, 40), new Point(40, 40), new Point(40, 20), new Point(40, 0)},new Point(Canvas.MAXWIDTH/2, Canvas.MAXHEIGHT/2),0,
-		        10,10, ImageIO.read(new File("images/tank_blue.png")),100);
+        player = new Tank(new Point[]{new Point(0, 0), new Point(0, 40), new Point(40, 40), new Point(40, 20), new Point(40, 0)}, new Point(0, 0), 0,
+                10, 10, ImageIO.read(new File("images/tank_blue.png")), 100);
 
-	    canvas = new Canvas(player);
+        canvas = new Canvas(player);
 
         canvas.update(gameObjects, player);
 
