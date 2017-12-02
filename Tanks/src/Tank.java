@@ -3,7 +3,7 @@ import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 import java.awt.image.BufferedImage;
 
-public class Tank extends Polygon implements KeyListener {
+public class Tank extends Damagable implements KeyListener {
     protected boolean left = false, right = false, front = false, shoot = false; //direction vectors
     public double speed = 0.1;
     public int shots = 0, MAX_SHOTS = 10;
@@ -12,9 +12,8 @@ public class Tank extends Polygon implements KeyListener {
     public BufferedImage image;
     public final int MAX_ACCEL = 15;
 
-    public Tank(Point[] inShape, Point inPosition, double inRotation, int width, int height, BufferedImage image){
-        super(inShape, inPosition, inRotation, width, height, image);
-        color = Color.red;
+    public Tank(Point[] inShape, Point inPosition, double inRotation, int width, int height, BufferedImage image, int health){
+        super(inShape, inPosition, inRotation, width, height, image, health);
     }
 
     public void move() {
