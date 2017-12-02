@@ -21,6 +21,7 @@ public class Game {
             new Point(10, 2),
             new Point(10, 0)
     };
+    public static final Point[] tankPoints = new Point[]{new Point(0, 0), new Point(0, 40), new Point(40, 40), new Point(40, 20), new Point(40, 0)};
     public static final Random r = new Random();
 
     private Canvas canvas;
@@ -74,13 +75,13 @@ public class Game {
             }
             for (Polygon p2: gameObjects) {
                 if (p != p2 && p.collides(p2)) {
-                    damage(p, rem);
-                    damage(p2, rem);
+                    damage(p, p2, rem);
+                    damage(p2, p, rem);
                 }
             }
             if (player.collides(p)) {
-                damage(p, rem);
-                damage(player, rem);
+                damage(p, player, rem);
+                damage(player, p, rem);
             }
         }
 
@@ -110,10 +111,10 @@ public class Game {
             Point position = new Point(r.nextInt(Canvas.MAXWIDTH), r.nextInt(Canvas.MAXHEIGHT));
             gameObjects.add(new Square(squarePoints, position, 0));
         }
-
-        player = new Tank(new Point[]{new Point(0, 0), new Point(0, 40), new Point(40, 40), new Point(40, 20), new Point(40, 0)}, new Point(0, 0), 0,
+        player = new Tank(tankPoints, new Point(0, 0), 0,
                 10, 10, ImageIO.read(new File("images/tank_blue.png")), 100);
 
+        gameObjects.add(new Bot(player));
         canvas = new Canvas(player);
 		player.assignCanvas(canvas);
         canvas.update(gameObjects, player);
@@ -122,14 +123,14 @@ public class Game {
 
     }
 
-	public void damage(Polygon p, ArrayList<Polygon> rem) {
+	public void damage(Polygon p, Polygon p2, ArrayList<Polygon> rem) {
 		Damagable d;
 		try {
 			d = (Damagable) p;
 			d.health--;
 			if (d.health == 1) {
 				rem.add(p);
-				player.setXp(player.getXp() + d.max_health);
+				if (p2 instanceof Bullet || p2 instanceof Tank) player.setXp(player.getXp() + d.max_health);
 			}
 			//p.recoil();
 		} catch (ClassCastException e) {
