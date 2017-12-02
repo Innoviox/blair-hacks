@@ -3,7 +3,7 @@ import java.awt.image.BufferedImage;
 
 public abstract class Damagable extends Polygon {
     public int health, max_health;
-    private HealthBar hb;
+    protected HealthBar hb;
     public Damagable(Point[] inShape, Point inPosition, double inRotation, int width, int height, BufferedImage image, int health) {
         super(inShape, inPosition, inRotation, width, height, image);
         this.health = health;
