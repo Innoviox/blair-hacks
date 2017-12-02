@@ -9,9 +9,9 @@ import java.util.concurrent.TimeUnit;
 public class Game {
     private static final Point[] squarePoints = new Point[] {
             new Point(0, 0),
-            new Point(0, 50),
-            new Point(50, 50),
-            new Point(50, 0)
+            new Point(0, Square.HEIGHT),
+            new Point(Square.WIDTH, Square.HEIGHT),
+            new Point(Square.WIDTH, 0)
     };
     private static final Random r = new Random();
     private Canvas canvas;
