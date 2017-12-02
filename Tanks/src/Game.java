@@ -79,7 +79,7 @@ public class Game {
             gameObjects.add(new Square(squarePoints, position, 0));
         }
 
-        player = new Tank(new Point[] {new Point(0,0), new Point(0, 10), new Point(10, 10), new Point(10, 0)},new Point(10, 10),0,
+        player = new Tank(new Point[] {new Point(0,0), new Point(0, 40), new Point(40, 40), new Point(40, 20), new Point(40, 0)},new Point(0, 0),0,
 		        10,10, ImageIO.read(new File("images/tank_blue.png")),10);
 
 	    canvas = new Canvas(player);
