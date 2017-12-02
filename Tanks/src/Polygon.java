@@ -9,6 +9,8 @@ public abstract class Polygon {
     public Point[] shape;   // An array of points.
     public Point position;   // The offset mentioned above.
 
+    public Point cameraTranslation = Canvas.cameraTranslation;
+
     public double rotation; // Zero degrees is due east.
     public int width, height;
     public BufferedImage img;
@@ -84,8 +86,10 @@ public abstract class Polygon {
 //        brush.fillPolygon(x, y, pl);
 //
         AffineTransform at = new AffineTransform();
-        at.translate(position.x - img.getWidth()/4 - Canvas.cameraTranslation.getX(), position.y - img.getHeight()/4 - Canvas.cameraTranslation.getY());
-        at.rotate(Math.toRadians(rotation), findCenter().x, findCenter().y);
+        try {
+            at.translate(position.x - img.getWidth() / 4 - cameraTranslation.getX(), position.y - img.getHeight() / 4 - cameraTranslation.getY());
+            at.rotate(Math.toRadians(rotation), findCenter().x, findCenter().y);
+        }catch(Exception e){}
         Graphics2D g2d = (Graphics2D) brush;
         g2d.drawImage(img, at, null);
 

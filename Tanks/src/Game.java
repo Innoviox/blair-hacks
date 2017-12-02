@@ -1,3 +1,5 @@
+import javax.imageio.ImageIO;
+import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
@@ -56,7 +58,8 @@ public class Game {
             gameObjects.add(new Square(squarePoints, position, 0));
         }
 
-        player = null;
+        player = new Tank(new Point[] {new Point(0,0)},new Point(0,0),0,
+		        10,10, ImageIO.read(new File("images/tank_blue.png")),10);
 
 	    canvas = new Canvas(player);
 
