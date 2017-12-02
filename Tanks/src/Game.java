@@ -2,7 +2,6 @@ import javax.imageio.ImageIO;
 import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 import java.util.Random;
 import java.util.concurrent.Executors;
@@ -52,25 +51,6 @@ public class Game {
         scheduler.scheduleAtFixedRate(update,1,1000/60, TimeUnit.MILLISECONDS);
 
     }
-    public void damage(Polygon p, ArrayList<Polygon> rem) {
-        Damagable d;
-        try {
-            d = (Damagable) p;
-            d.health--;
-            if (d.health == 0) rem.add(p);
-        } catch (ClassCastException e) {rem.add(p);}
-    }
-
-
-    public void makeBullet() {
-
-        if (updates - lastShot > 10) {
-            lastShot = updates;
-            gameObjects.add(new Bullet(bulletPoints, new Point(player.getPoints()[3].x + Canvas.MAXWIDTH / 2, player.getPoints()[3].y + Canvas.MAXHEIGHT / 2), player.rotation, 50, 50, Math.abs(player.accel.x + player.accel.y)));
-        }
-    }
-
-
 
     public void update() {
         int count = 0;
@@ -113,7 +93,15 @@ public class Game {
                 e.printStackTrace();
             }
         }
+        if (new Random().nextInt(count / 2) == 1) {
+            Point position = new Point(r.nextInt(Canvas.MAXWIDTH), r.nextInt(Canvas.MAXHEIGHT));
+            try {
+                gameObjects.add(new Square(squarePoints, position, 0));
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
 
+        }
 
         gameObjects.removeAll(rem);
         if (canvas.getKeys().get(' ')) {
@@ -143,4 +131,25 @@ public class Game {
 
     }
 
+	public void damage(Polygon p, ArrayList<Polygon> rem) {
+		Damagable d;
+		try {
+			d = (Damagable) p;
+			d.health--;
+			if (d.health == 0) {
+				rem.add(p);
+				player.setXp(player.getXp() + 5 * d.max_health);
+			}
+		} catch (ClassCastException e) {
+		}
+	}
+
+
+	public void makeBullet() {
+
+		if (updates - lastShot > player.getRateOfFire()) {
+			lastShot = updates;
+			gameObjects.add(new Bullet(bulletPoints, new Point(player.getPoints()[3].x + Canvas.MAXWIDTH / 2, player.getPoints()[3].y + Canvas.MAXHEIGHT / 2), player.rotation, 50, 50, Math.abs(player.accel.x + player.accel.y)));
+		}
+	}
 }
