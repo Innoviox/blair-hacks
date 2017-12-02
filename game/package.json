@@ -1,0 +1,27 @@
+{
+  "name": "game",
+  "version": "1.0.0",
+  "description": "A basic tank game",
+  "main": "index.js",
+  "scripts": {
+    "test": "npm run"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Innoviox/blair-hacks.git"
+  },
+  "keywords": [
+    "game",
+    "tank"
+  ],
+  "author": "Simon Chervenak",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Innoviox/blair-hacks/issues"
+  },
+  "homepage": "https://github.com/Innoviox/blair-hacks#readme",
+  "dependencies": {
+    "express": "^4.16.2",
+    "socket.io": "^2.0.4"
+  }
+}
