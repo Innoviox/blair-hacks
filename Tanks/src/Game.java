@@ -42,7 +42,7 @@ public class Game {
 
     public void update() {
         //TODO update!
-
+	    System.out.println("u");
         for(Polygon p : gameObjects)
             p.update();
 

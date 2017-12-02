@@ -3,7 +3,9 @@
   <component name="ChangeListManager">
     <list default="true" id="1f4c6c76-5ef4-445c-b9df-25f3353624b8" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/Tanks/src/HealthBar.java" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/Tanks/src/Canvas.java" afterPath="$PROJECT_DIR$/Tanks/src/Canvas.java" />
+      <change beforePath="$PROJECT_DIR$/Tanks/src/Game.java" afterPath="$PROJECT_DIR$/Tanks/src/Game.java" />
+      <change beforePath="$PROJECT_DIR$/Tanks/src/Square.java" afterPath="$PROJECT_DIR$/Tanks/src/Square.java" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -27,9 +29,22 @@
       <file leaf-file-name="Game.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Tanks/src/Game.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="255">
-              <caret line="21" column="0" lean-forward="true" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
+            <state relative-caret-position="238">
+              <caret line="48" column="19" lean-forward="true" selection-start-line="48" selection-start-column="19" selection-end-line="48" selection-end-column="19" />
               <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Canvas.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Tanks/src/Canvas.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="153">
+              <caret line="20" column="21" lean-forward="true" selection-start-line="20" selection-start-column="21" selection-end-line="20" selection-end-column="21" />
+              <folding>
+                <element signature="e#1274#1275#0" expanded="true" />
+                <element signature="e#1292#1293#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -79,8 +94,9 @@
       <list>
         <option value="$PROJECT_DIR$/Tanks/src/Bullet.java" />
         <option value="$PROJECT_DIR$/Tanks/src/Tank.java" />
-        <option value="$PROJECT_DIR$/Tanks/src/Canvas.java" />
         <option value="$PROJECT_DIR$/Tanks/src/Polygon.java" />
+        <option value="$PROJECT_DIR$/Tanks/src/Square.java" />
+        <option value="$PROJECT_DIR$/Tanks/src/Canvas.java" />
         <option value="$PROJECT_DIR$/Tanks/src/Game.java" />
       </list>
     </option>
@@ -283,12 +299,12 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1512238142930</updated>
-      <workItem from="1512238145436" duration="4890000" />
+      <workItem from="1512238145436" duration="5754000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="4890000" />
+    <option name="totallyTimeSpent" value="5754000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
@@ -358,18 +374,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Tanks/src/Canvas.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="326">
-          <caret line="38" column="0" lean-forward="true" selection-start-line="38" selection-start-column="0" selection-end-line="38" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="false" />
-            <element signature="e#890#891#0" expanded="false" />
-            <element signature="e#908#909#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Tanks/src/HealthBar.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="17">
@@ -378,10 +382,34 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/Tanks/images/square.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Tanks/src/Square.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="15" column="36" lean-forward="true" selection-start-line="15" selection-start-column="36" selection-end-line="15" selection-end-column="36" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Tanks/src/Canvas.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="20" column="21" lean-forward="true" selection-start-line="20" selection-start-column="21" selection-end-line="20" selection-end-column="21" />
+          <folding>
+            <element signature="e#1274#1275#0" expanded="true" />
+            <element signature="e#1292#1293#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/Tanks/src/Game.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="21" column="0" lean-forward="true" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
+        <state relative-caret-position="238">
+          <caret line="48" column="19" lean-forward="true" selection-start-line="48" selection-start-column="19" selection-end-line="48" selection-end-column="19" />
           <folding />
         </state>
       </provider>
