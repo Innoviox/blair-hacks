@@ -133,8 +133,12 @@ public class Tank extends Damagable {
     	right = keys.get('d');
     	front = keys.get('w');
 		move();
-		if(xp > level * level ){
+		if(xp > level * level * 500){
 			levelup();
+		}
+
+		if(this.health <= 0){
+			System.exit(0);
 		}
     }
 

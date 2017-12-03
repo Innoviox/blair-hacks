@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="BulletHell:jar">
+    <output-path>$USER_HOME$/blair-hacks/artifacts/BulletHell_jar</output-path>
+    <root id="archive" name="BulletHell.jar">
+      <element id="module-output" name="BulletHell" />
+    </root>
+  </artifact>
+</component>
