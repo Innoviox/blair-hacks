@@ -114,7 +114,7 @@ public class Game {
         player = new Tank(tankPoints, new Point(0, 0), 0,
                 10, 10, ImageIO.read(new File("images/tank_blue.png")), 100);
 
-        gameObjects.add(new Bot(player));
+        //gameObjects.add(new Bot(player));
         canvas = new Canvas(player);
 		player.assignCanvas(canvas);
 		canvas.update(gameObjects, player);
